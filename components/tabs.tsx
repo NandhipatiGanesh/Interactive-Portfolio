@@ -27,7 +27,7 @@ export default function Tabs() {
   return (
     <>
       <section>
-        <div className="p-2 rounded-full w-[400px]  bg-white border-1 border-gray-100  flex items-center justify-between gap-1 shadow-md mb-4 fixed bottom-10 left-1/2 transform -translate-x-1/2 z-100">
+        <div className="p-2 rounded-full w-[400px]  bg-white border-1 border-gray-100  flex items-center justify-between gap-1 shadow-md mb-4 fixed bottom-10 left-1/2 transform -translate-x-1/2 z-200">
           <button
             onClick={() => {
               setIsWeb(true);
@@ -74,8 +74,21 @@ export default function Tabs() {
           </button>
         </div>
 
-        <section id="work-showcase" ref={showcaseRef} className="bg-[#09090B]">
-          {isWeb ? <InfiniteScrollLandscape /> : <IntfiniteScroll />}
+        <section id="work-showcase" ref={showcaseRef} className="relative">
+          <div className="flex-1 relative z-100">
+             {isWeb ? <InfiniteScrollLandscape /> : <IntfiniteScroll />}
+          </div>
+         
+        
+  {/* Radial Gradient Background from Top */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "radial-gradient(125% 125% at 50% 10%, #fff 40%, #7c3aed 100%)",
+    }}
+  />
+  {/* Your Content/Components */}
+
         </section>
       </section>
     </>

@@ -32,21 +32,21 @@ export default function PortfolioPage({
     features: [
       {
         id: "deforestation",
-        title: "Fight deforestation",
+        title: "Websites",
         imageUrl:
           "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=800&auto=format&fit=crop",
         href: "#",
       },
       {
         id: "ocean-health",
-        title: "Invest in ocean health",
+        title: "Dashboards",
         imageUrl:
           "https://images.unsplash.com/photo-1503756234508-e32369269deb?q=80&w=800&auto=format&fit=crop",
         href: "#",
       },
       {
         id: "animal-welfare",
-        title: "Support animal welfare",
+        title: "Mobile Apps",
         imageUrl:
           "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=800&auto=format&fit=crop",
         href: "#",

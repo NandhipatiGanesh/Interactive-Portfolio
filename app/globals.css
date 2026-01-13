@@ -1,6 +1,22 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Acre Medium";
+  src: url("/fonts/acre-medium-webfont.woff2") format("woff2"),
+       url("/fonts/acre-medium-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Capricho Light";
+  src: url("/fonts/capricho-light-webfont.woff2") format("woff2"),
+       url("/fonts/capricho-light-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -47,11 +63,12 @@
 }
 
 body {
+  font-family: "Acre Medium";
 }
 
 button {
   cursor: pointer;
-  font-family: var(--font-sans);
+font-family: "Acre Medium";
  
 }
 
@@ -66,7 +83,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "area-normal", sans-serif;
+font-family: "Acre Medium";
 }
 
 /* Navigation Styles */

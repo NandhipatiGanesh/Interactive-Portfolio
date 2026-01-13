@@ -163,7 +163,7 @@ export default function InfiniteScrollLandscape() {
     <>
       <div
         ref={containerRef}
-        className="relative w-full h-[calc(100dvh-100px)] md:h-screen overflow-hidden flex items-center justify-center"
+        className="relative w-full h-[calc(100dvh-100px)] md:h-screen overflow-hidden flex items-center justify-center "
       >
         <ul
           ref={cardsRef}

@@ -200,7 +200,7 @@ export default function PinnedImageReveal() {
                 <a
                   className="link"
                   href="#"
-                  style={{ backgroundColor: "#D5FF37" }}
+                  style={{ backgroundColor: "#c9fd74" }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -228,7 +228,7 @@ export default function PinnedImageReveal() {
                 <a
                   className="link"
                   href="#"
-                  style={{ backgroundColor: "#7DD6FF" }}
+                  style={{ backgroundColor: "#c9fd74" }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +257,7 @@ export default function PinnedImageReveal() {
                 <a
                   className="link"
                   href="#"
-                  style={{ backgroundColor: "#FFA0B0" }}
+                  style={{ backgroundColor: "#c9fd74" }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -286,7 +286,7 @@ export default function PinnedImageReveal() {
                 <a
                   className="link"
                   href="#"
-                  style={{ backgroundColor: "#FFA17B" }}
+                  style={{ backgroundColor: "#c9fd74" }}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

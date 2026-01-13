@@ -3,7 +3,7 @@ import * as React from "react";
 import { motion, Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils"; // Assuming shadcn/ui setup
-import { Button } from "@/components/ui/button"; // Assuming shadcn/ui setup
+import FlipButton from "@/components/ui/FlipButton";
 import { Card } from "@/components/ui/card"; // Assuming shadcn/ui setup
 
 // --- Animation Variants ---
@@ -75,7 +75,10 @@ export function EthicalHero({
       <div className="mx-auto max-w-3xl text-center">
         <motion.h1
           variants={FADE_UP_VARIANTS}
-          className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl"
+          className="text-3xl font-bold tracking-normal text-foreground sm:text-5xl"
+          style={{
+            lineHeight: "1.2em"
+          }}
         >
           {title}
         </motion.h1>
@@ -88,9 +91,12 @@ export function EthicalHero({
         </motion.p>
 
         <motion.div variants={FADE_UP_VARIANTS} className="mt-10">
-          <Button size="lg" asChild>
-            <a href={ctaHref}>{ctaLabel}</a>
-          </Button>
+          <button className="bg-[#c9fd74] rounded-full px-8 py-4 text-black" >
+            <FlipButton
+                          className="justify-center items-center"
+                          label="View my Works"
+                        />
+          </button>
         </motion.div>
       </div>
 

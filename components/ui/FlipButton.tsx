@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import styles from "./flipbutton.module.scss";
 interface ButtonProps {
-  isActive: boolean;
-  toggleMenu: () => void;
+  isActive?: boolean;
+  toggleMenu?: () => void;
   children?: React.ReactNode;
   label?: string;
   className?: string; 
@@ -23,7 +23,7 @@ export default function FlipButton({
         <div
           className={styles.flipel}
           onClick={() => {
-            toggleMenu();
+            toggleMenu?.();
           }}
         >
           <PerspectiveText label={label || "Button"} />
