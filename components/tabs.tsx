@@ -27,7 +27,7 @@ export default function Tabs() {
   return (
     <>
       <section>
-        <div className="p-2 rounded-full w-[400px]  bg-white border-1 border-gray-100  flex items-center justify-between gap-1 shadow-md mb-4 fixed bottom-10 left-1/2 transform -translate-x-1/2 z-200">
+        <div className="p-2 rounded-full w-[95%] md:w-[400px] bg-white border-1 border-gray-100  flex items-center justify-between gap-1 shadow-md mb-4 fixed bottom-10 left-1/2 transform -translate-x-1/2 z-200">
           <button
             onClick={() => {
               setIsWeb(true);

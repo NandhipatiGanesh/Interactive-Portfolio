@@ -224,7 +224,7 @@ export const FrequencyCircle = forwardRef<
                   x="250"
                   y="255"
                   textAnchor="middle"
-                  className="fc-center fill-[#3a3a3a] text-[28px] font-serif"
+                  className="fc-center fill-[#3a3a3a] text-[28px]"
                 >
                   Frequency
                 </text>
@@ -240,7 +240,7 @@ export const FrequencyCircle = forwardRef<
                   x="250"
                   y="40"
                   textAnchor="middle"
-                  className="fc-text fill-gray-500 text-[12px] font-serif"
+                  className="fc-text fill-gray-500 text-[12px] md:text-[20px] "
                 >
                   Regulates Nervous System
                 </text>
@@ -255,7 +255,7 @@ export const FrequencyCircle = forwardRef<
                 <text
                   x="415"
                   y="135"
-                  className="fc-text fill-gray-500 text-[12px] font-serif"
+                  className="fc-text fill-gray-500 text-[12px] md:text-[20px] "
                 >
                   Decreases Anxiety
                 </text>
@@ -270,7 +270,7 @@ export const FrequencyCircle = forwardRef<
                 <text
                   x="460"
                   y="255"
-                  className="fc-text fill-gray-500 text-[12px] font-serif"
+                  className="fc-text fill-gray-500 text-[12px] md:text-[20px] "
                 >
                   Improves Focus
                 </text>
@@ -285,7 +285,7 @@ export const FrequencyCircle = forwardRef<
                 <text
                   x="415"
                   y="375"
-                  className="fc-text fill-gray-500 text-[12px] font-serif"
+                  className="fc-text fill-gray-500 text-[12px] md:text-[20px] "
                 >
                   Reduces Depression
                 </text>
@@ -301,7 +301,7 @@ export const FrequencyCircle = forwardRef<
                   x="250"
                   y="470"
                   textAnchor="middle"
-                  className="fc-text fill-gray-500 text-[12px] font-serif"
+                  className="fc-text fill-gray-500 text-[12px] md:text-[20px]"
                 >
                   Supports Emotional Release
                 </text>
@@ -317,7 +317,7 @@ export const FrequencyCircle = forwardRef<
                   x="100"
                   y="135"
                   textAnchor="end"
-                  className="fc-text fill-gray-500 text-[12px] font-serif"
+                  className="fc-text fill-gray-500 text-[12px] md:text-[20px]"
                 >
                   Expands Self-Transcendence
                 </text>
@@ -333,7 +333,7 @@ export const FrequencyCircle = forwardRef<
                   x="50"
                   y="255"
                   textAnchor="end"
-                  className="fc-text fill-gray-500 text-[12px] font-serif"
+                  className="fc-text fill-gray-500 text-[12px] md:text-[20px]"
                 >
                   Deepens Awareness
                 </text>
@@ -349,7 +349,7 @@ export const FrequencyCircle = forwardRef<
                   x="100"
                   y="375"
                   textAnchor="end"
-                  className="fc-text fill-gray-500 text-[12px] font-serif"
+                  className="fc-text fill-gray-500 text-[12px] md:text-[20px] "
                 >
                   Reduces PTSD Symptoms
                 </text>

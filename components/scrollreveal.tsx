@@ -60,14 +60,14 @@ function FeaturesSection() {
   return (
     <div
       ref={containerRef}
-      className="min-h-screen bg-[#d6d2cc] flex items-center justify-center px-4 py-20"
+      className="min-h-screen bg-white flex items-center justify-center px-4 py-20"
     >
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
         {/* Top Left - Guided sessions */}
         <div className="feature-card bg-[#e8e6e1] rounded-2xl p-8 border border-[#c5c1b8] md:col-start-1 md:row-start-1">
-          <div className="w-12 h-12 bg-[#3a3a3a] rounded-full flex items-center justify-center mb-6">
+          <div className="w-12 h-12 bg-[#C9FD74] rounded-full flex items-center justify-center mb-6">
             <svg
-              className="w-6 h-6 text-white"
+              className="w-6 h-6 text-black"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -92,21 +92,21 @@ function FeaturesSection() {
         {/* Center - Phone */}
         <div className="phone-center md:col-start-2 md:row-start-1 md:row-span-2 flex justify-center">
           <div className="relative">
-            <div className="w-[280px] h-[570px] bg-[#2a2a2a] rounded-[50px] p-3 shadow-2xl border-8 border-[#1a1a1a]">
+            <div className="w-[280px] h-[570px] bg-[#C9FD74] rounded-[50px] p-3 shadow-2xl border-8 border-[#C9FD74]">
               <div className="w-full h-full bg-gradient-to-br from-[#4a5a4a] to-[#2a3a2a] rounded-[42px] overflow-hidden relative">
                 {/* Phone notch */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-[#1a1a1a] rounded-b-3xl z-10"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-[#C9FD74] rounded-b-3xl z-10"></div>
 
                 {/* Phone content */}
-                <div className="relative h-full flex flex-col p-8 pt-16 text-white">
+                <div className="relative h-full flex flex-col p-8 pt-16 text-[#111111]">
                   <h2 className="text-xl font-serif mb-2 leading-tight">
                     Transform stress, anxiety,
-                    <br />
+                    <br />1
                     and PTSD through clinically
                     <br />
                     proven breathwork
                   </h2>
-                  <p className="text-xs text-gray-300 mb-8">
+                  <p className="text-xs text-[#111111] mb-8">
                     A clinically supported breathwork app taking on stress,
                     anxiety, complex trauma, and PTSD for emotional
                     transformation.
@@ -146,9 +146,9 @@ function FeaturesSection() {
 
         {/* Top Right - Personalized recommendations */}
         <div className="feature-card bg-[#e8e6e1] rounded-2xl p-8 border border-[#c5c1b8] md:col-start-3 md:row-start-1">
-          <div className="w-12 h-12 bg-[#3a3a3a] rounded-full flex items-center justify-center mb-6">
+          <div className="w-12 h-12 bg-[#C9FD74] rounded-full flex items-center justify-center mb-6">
             <svg
-              className="w-6 h-6 text-white"
+              className="w-6 h-6 text-black"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -172,9 +172,9 @@ function FeaturesSection() {
 
         {/* Bottom Left - Daily practices */}
         <div className="feature-card bg-[#e8e6e1] rounded-2xl p-8 border border-[#c5c1b8] md:col-start-1 md:row-start-2">
-          <div className="w-12 h-12 bg-[#3a3a3a] rounded-full flex items-center justify-center mb-6">
+          <div className="w-12 h-12 bg-[#C9FD74] rounded-full flex items-center justify-center mb-6">
             <svg
-              className="w-6 h-6 text-white"
+              className="w-6 h-6 text-black"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -198,9 +198,9 @@ function FeaturesSection() {
 
         {/* Bottom Right - Progress tracking */}
         <div className="feature-card bg-[#e8e6e1] rounded-2xl p-8 border border-[#c5c1b8] md:col-start-3 md:row-start-2">
-          <div className="w-12 h-12 bg-[#3a3a3a] rounded-full flex items-center justify-center mb-6">
+          <div className="w-12 h-12 bg-[#C9FD74] rounded-full flex items-center justify-center mb-6">
             <svg
-              className="w-6 h-6 text-white"
+              className="w-6 h-6 text-black"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

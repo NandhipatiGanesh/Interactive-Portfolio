@@ -13,14 +13,14 @@ export function ExpandingHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"],
+    offset: ["start end", "end start"],
   })
 
   const rotate1 = useTransform(scrollYProgress, [0, 1], [0, -15])
   const rotate2 = useTransform(scrollYProgress, [0, 1], [0, 0])
   const rotate3 = useTransform(scrollYProgress, [0, 1], [0, 15])
-  const x1 = useTransform(scrollYProgress, [0, 1], [0, -200])
-  const x3 = useTransform(scrollYProgress, [0, 1], [0, 200])
+  const x1 = useTransform(scrollYProgress, [0, 1], [0, -350])
+  const x3 = useTransform(scrollYProgress, [0, 1], [0, 350])
   const y = useTransform(scrollYProgress, [0, 1], [0, 100])
 
   return (
