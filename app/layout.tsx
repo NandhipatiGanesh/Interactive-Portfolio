@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./globals.scss";
+import  Footer  from "@/components/modem-animated-footer";
+import {WaitlistHero} from "@/components/waitlist-hero";  
+import Header from "@/components/Header";
+import  BigHeader  from "@/components/bigheader";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,10 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        
-      </head>
+       <BigHeader />
       <body className="antialiased">{children}</body>
+      <WaitlistHero />
     </html>
   );
 }
