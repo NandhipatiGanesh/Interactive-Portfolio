@@ -84,7 +84,7 @@ export default function Tabs() {
   <div
     className="absolute inset-0 z-0"
     style={{
-      background: "radial-gradient(125% 125% at 50% 10%, #fff 40%, #7c3aed 100%)",
+      background: "radial-gradient(125% 125% at 50% 10%, #fff 40%, #C9FD74 100%)",
     }}
   />
   {/* Your Content/Components */}

@@ -4,7 +4,7 @@ import { motion, Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils"; // Assuming shadcn/ui setup
 import FlipButton from "@/components/ui/FlipButton";
-import { Card } from "@/components/ui/card"; // Assuming shadcn/ui setup
+import { ExpandingHero } from "./expanding-hero";// Assuming shadcn/ui setup
 
 // --- Animation Variants ---
 
@@ -72,7 +72,7 @@ export function EthicalHero({
       className="container mx-auto max-w-6xl px-4 py-16 sm:py-24 my-24"
     >
       {/* 1. Hero Text Content */}
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-3xl text-center pt-16">
         <motion.h1
           variants={FADE_UP_VARIANTS}
           className="text-3xl font-bold tracking-normal text-foreground sm:text-5xl"
@@ -101,45 +101,7 @@ export function EthicalHero({
       </div>
 
       {/* 2. Feature Card Grid */}
-      <motion.div
-        variants={STAGGER_CONTAINER_VARIANTS}
-        className="mt-16 grid grid-cols-1 gap-6 sm:mt-24 md:grid-cols-3"
-      >
-        {features.map((feature) => (
-          <motion.a
-            key={feature.id}
-            href={feature.href}
-            aria-label={feature.title}
-            variants={FADE_UP_VARIANTS}
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="block"
-          >
-            <Card className="group h-full overflow-hidden rounded-xl shadow-sm transition-shadow duration-300 ease-in-out hover:shadow-md">
-              {/* Card Image */}
-              <div className="overflow-hidden">
-                <img
-                  src={feature.imageUrl}
-                  alt={feature.title}
-                  className="aspect-square w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-                />
-              </div>
-
-              {/* Card Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {feature.title}
-                  </h3>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-muted/50 transition-colors duration-300 group-hover:bg-muted">
-                    <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1" />
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </motion.a>
-        ))}
-      </motion.div>
+      <ExpandingHero /> 
     </motion.section>
   );
 }

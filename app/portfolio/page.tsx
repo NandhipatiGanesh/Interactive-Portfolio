@@ -1,14 +1,19 @@
 "use client";
 import { useState } from "react";
-
+import { LenisProvider } from "@/components/leni-provider"
+import { CustomCursor } from "@/components/custom-cursor"
 import PinnedImageReveal from "@/components/pinnedImageReveal";
 import { EthicalHero } from "@/components/herosections";
 import Tabs from "@/components/tabs";
-import Pricing from "@/components/pricing-base";
+import { PricingSection } from "@/components/pricing-base";
 import { FrequencyCircle } from "@/components/FrequencyCircle";
-import Button from "@/components/Header/button";
+import { Features } from "@/components/features"
 import RadialScrollGalleryExample from "@/components/RadialScrollGallery";
 import FeaturesSection from "@/components/scrollreveal";
+import { InsightsSection } from "@/components/insights-section"
+import { ManifestoSection } from "@/components/menifesto-section"
+import {ShowcaseSection } from "@/components/showcase"
+import {CarouselSection} from "@/components/carousel-section"
 export default function PortfolioPage({
   isActiveProp,
 }: {
@@ -19,10 +24,12 @@ export default function PortfolioPage({
   const heroData = {
     title: (
       <>
-        Invest in companies
+        I Design Websites 
+      
+        for
         <br />
-        and industries that share your{" "}
-        <span className="text-primary">ethical values.</span>
+        Founders who move fast{" "}
+        
       </>
     ),
     subtitle:
@@ -55,6 +62,11 @@ export default function PortfolioPage({
   };
   return (
     <>
+    <LenisProvider>
+       <main className="custom-cursor bg-background">
+      <CustomCursor />
+
+   
       <EthicalHero
         title={heroData.title}
         subtitle={heroData.subtitle}
@@ -62,14 +74,22 @@ export default function PortfolioPage({
         ctaHref={heroData.ctaHref}
         features={heroData.features}
       />
-
+      <ManifestoSection />
+     
       <Tabs />
+      <InsightsSection />
       <PinnedImageReveal />
-    
+      <Features />
+      <ShowcaseSection />
 
       <RadialScrollGalleryExample />
       <FrequencyCircle />
-       <FeaturesSection />
+      
+      <PricingSection />
+      <FeaturesSection />
+      <CarouselSection />
+      </main>
+      </LenisProvider>
   
     </>
   );

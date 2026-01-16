@@ -366,8 +366,8 @@ export const WaitlistHero = () => {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="h-full px-6 rounded-full font-medium text-white transition-all active:scale-95 hover:brightness-110 disabled:hover:brightness-100 disabled:active:scale-100 disabled:cursor-wait flex items-center justify-center min-w-[130px]"
-                  style={{ backgroundColor: colors.bluePrimary }}
+                  className="h-full px-6 rounded-full font-medium text-[#111111] transition-all active:scale-95 hover:brightness-110 disabled:hover:brightness-100 disabled:active:scale-100 disabled:cursor-wait flex items-center justify-center min-w-[130px]"
+                  style={{ backgroundColor: "#C9FD74" }}
                 >
                   {status === "loading" ? (
                     <svg
