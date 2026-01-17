@@ -27,11 +27,37 @@ export function CarouselSection() {
           Built by creators, for creators.
         </motion.h2>
       </div>
-
+      {/* this part moving   left from right */}
       <div className="relative">
         <motion.div
           className="flex gap-6"
           animate={{ x: [0, "-50%"] }}
+          transition={{
+            duration: 30,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "linear",
+          }}
+        >
+          {items.map((src, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 w-[300px] md:w-[400px] rounded-xl overflow-hidden shadow-2xl"
+              data-clickable
+            >
+              <img
+                src={src || "/placeholder.svg"}
+                alt={`Portfolio example ${(i % portfolioItems.length) + 1}`}
+                className="w-full h-auto"
+              />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+      {/* this part moving right from left */}
+      <div className="relative mt-12">
+        <motion.div
+          className="flex gap-6"
+          animate={{ x: ["-50%", 0] }}
           transition={{
             duration: 30,
             repeat: Number.POSITIVE_INFINITY,
