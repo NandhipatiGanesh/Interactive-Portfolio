@@ -10,7 +10,7 @@ export default function BigHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 p-6">
+    <header className="fixed top-0 left-0 right-0 z-300 p-6">
       <nav className="max-w-7xl mx-auto bg-background/80 backdrop-blur-md border border-border/50 rounded-3xl shadow-lg">
         <div className="flex items-center justify-between h-20 px-6 lg:px-8">
           {/* Logo */}

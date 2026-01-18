@@ -109,7 +109,7 @@ export const WaitlistHero = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-black flex items-center justify-center">
+    <div className="w-full min-h-screen bg-black flex items-center justify-center z-300 relative">
       {/* Animation Styles */}
       <style>{`
         @keyframes spin-slow {
