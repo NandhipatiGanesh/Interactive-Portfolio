@@ -7,13 +7,16 @@ import { EthicalHero } from "@/components/herosections";
 import Tabs from "@/components/tabs";
 import { PricingSection } from "@/components/pricing-base";
 import { FrequencyCircle } from "@/components/FrequencyCircle";
-import { Features } from "@/components/features"
+import { ProjectShowcase } from "@/components/project-showcase";
+import { InsightsSection } from "@/components/insights-section";
+import NewFeaturesSection from "@/components/bento-grid"
 import RadialScrollGalleryExample from "@/components/RadialScrollGallery";
 import FeaturesSection from "@/components/scrollreveal";
-import { InsightsSection } from "@/components/insights-section"
+
 import { ManifestoSection } from "@/components/menifesto-section"
 import {ShowcaseSection } from "@/components/showcase"
 import {CarouselSection} from "@/components/carousel-section"
+import { MultiStepForm } from "@/components/multistepform";
 export default function PortfolioPage({
   isActiveProp,
 }: {
@@ -24,10 +27,10 @@ export default function PortfolioPage({
   const heroData = {
     title: (
       <>
-        I Design Websites 
-      
+        I Design Web & Mobile Applications 
+       <br />
         for
-        <br />
+       
         Founders who move fast{" "}
         
       </>
@@ -76,11 +79,13 @@ export default function PortfolioPage({
       />
       <ManifestoSection />
      
+     
       <Tabs />
       <InsightsSection />
+      {/* <ProjectShowcase /> */}
       <PinnedImageReveal />
-      <Features />
-      <ShowcaseSection />
+      <NewFeaturesSection />
+      
 
       <RadialScrollGalleryExample />
       <FrequencyCircle />
@@ -88,6 +93,9 @@ export default function PortfolioPage({
       <PricingSection />
       <FeaturesSection />
       <CarouselSection />
+      <div className="flex min-h-screen items-center justify-center bg-background p-4 w-full">
+      <MultiStepForm />
+      </div>
       </main>
       </LenisProvider>
   

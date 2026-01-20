@@ -45,11 +45,11 @@
 
     a.link {
       text-decoration: none;
-      padding: 16px 18px;
+      padding: 16px 42px;
       color: inherit;
       border-radius: 40px;
       display: flex;
-      gap: 4px;
+      gap: 10px;
       width: fit-content;
       align-items: center;
     }
@@ -70,7 +70,7 @@
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    height: 400px;
+    height: 500px;
     width: 100%;
     border-radius: 16px;
     overflow: hidden;

@@ -112,6 +112,13 @@ h6 {
   font-family: "HeadingFont";
 }
 
+label{
+  font-family: "Circular";
+}
+
+input{
+  font-family: "Circular";
+}
 /* Navigation Styles */
 .nav_bottom_link-wrapper {
   grid-column-gap: 5vh;

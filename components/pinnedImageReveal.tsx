@@ -5,6 +5,7 @@ import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "./compoundsstyles.css";
+import FlipButton from "@/components/ui/FlipButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -191,14 +192,14 @@ export default function PinnedImageReveal() {
           <div className="arch__left">
             <div className="arch__info" id="green-arch">
               <div className="content">
-                <h2 className="header">Green Cityscape</h2>
+                <h2 className="header">Website Design</h2>
                 <p className="desc">
-                  Vibrant streets with vertical gardens and solar buildings.
-                  This oasis thrives on renewable energy, smart transport, and
-                  green spaces for biodiversity.
+                  Create stunning, responsive websites that captivate your audience. 
+                  We craft beautiful layouts with modern design principles, optimized 
+                  for performance and user experience across all devices.
                 </p>
                 <a
-                  className="link"
+                  className="link px-6"
                   href="#"
                   style={{ backgroundColor: "#c9fd74" }}
                 >
@@ -213,20 +214,21 @@ export default function PinnedImageReveal() {
                       d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z"
                     />
                   </svg>{" "}
-                  <span>Learn More</span>
+                  <FlipButton className="justify-center items-center px-4" label="Get Started" />
                 </a>
               </div>
             </div>
 
             <div className="arch__info" id="blue-arch">
               <div className="content">
-                <h2 className="header">Blue Urban Oasis</h2>
+                <h2 className="header">Mobile App Design</h2>
                 <p className="desc">
-                  Avenues with azure facades and eco-structures. This hub uses
-                  clean energy, smart transit, and parks for urban wildlife.
+                  Design intuitive mobile experiences for iOS and Android. 
+                  From concept to prototype, we build apps that users love with 
+                  seamless navigation, engaging interfaces, and pixel-perfect design.
                 </p>
                 <a
-                  className="link"
+                  className="link px-6"
                   href="#"
                   style={{ backgroundColor: "#c9fd74" }}
                 >
@@ -241,21 +243,21 @@ export default function PinnedImageReveal() {
                       d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z"
                     />
                   </svg>{" "}
-                  <span>Learn More</span>
+                  <FlipButton className="justify-center items-center px-4" label="Get Started" />
                 </a>
               </div>
             </div>
 
             <div className="arch__info" id="pink-arch">
               <div className="content">
-                <h2 className="header">Fluid Architecture</h2>
+                <h2 className="header">Web & Mobile App Maintenance</h2>
                 <p className="desc">
-                  Desert refuge with fluid architecture and glowing interiors.
-                  This sanctuary harnesses solar power, sustainable design, and
-                  natural harmony for resilient living.
+                  Keep your applications running smoothly with our comprehensive 
+                  maintenance services. We provide regular updates, bug fixes, 
+                  performance optimization, and security patches for long-term success.
                 </p>
                 <a
-                  className="link"
+                  className="link px-6"
                   href="#"
                   style={{ backgroundColor: "#c9fd74" }}
                 >
@@ -270,21 +272,21 @@ export default function PinnedImageReveal() {
                       d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z"
                     />
                   </svg>{" "}
-                  <span>Learn More</span>
+                  <FlipButton className="justify-center items-center px-4" label="Get Started" />
                 </a>
               </div>
             </div>
 
             <div className="arch__info" id="orange-arch">
               <div className="content">
-                <h2 className="header">Martian Arches</h2>
+                <h2 className="header">Custom Dashboard</h2>
                 <p className="desc">
-                  Ethereal structures arc over tranquil waters, bathed in the
-                  glow of a setting Martian sun. This desolate beauty showcases
-                  the stark, captivating landscape of the red planet.
+                  Build powerful, data-driven dashboards tailored to your business needs. 
+                  Visualize complex data with interactive charts, real-time analytics, 
+                  and intuitive controls for better decision-making.
                 </p>
                 <a
-                  className="link"
+                  className="link px-6"
                   href="#"
                   style={{ backgroundColor: "#c9fd74" }}
                 >
@@ -299,37 +301,71 @@ export default function PinnedImageReveal() {
                       d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z"
                     />
                   </svg>{" "}
-                  <span>Learn More</span>
+                  <FlipButton className="justify-center items-center px-4" label="Get Started" />
+                </a>
+              </div>
+            </div>
+            <div className="arch__info" id="cms-arch">
+              <div className="content">
+                <h2 className="header">CMS Development</h2>
+                <p className="desc">
+                  Leverage powerful platforms like WordPress and Framer to build 
+                  flexible, easy-to-manage websites. Perfect for content-heavy sites, 
+                  blogs, and businesses that need quick updates without coding.
+                </p>
+                <a
+                  className="link px-6"
+                  href="#"
+                  style={{ backgroundColor: "#c9fd74" }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="11"
+                    height="11"
+                    fill="none"
+                  >
+                    <path
+                      fill="#121212"
+                      d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z"
+                    />
+                  </svg>{" "}
+                  <FlipButton className="justify-center items-center px-4" label="Get Started" />
                 </a>
               </div>
             </div>
           </div>
 
           <div className="arch__right">
+            <div className="img-wrapper" data-index="5">
+              <img
+                src="/servicesimages/Web Design.png"
+                alt="Website Design"
+              />
+            </div>
+
             <div className="img-wrapper" data-index="4">
               <img
-                src="https://ik.imagekit.io/kg2nszxjp/GSAP%20pinned%20image%20mask%20reveal%20on%20scroll/cu8978xjlsjjpjk52ta0.webp"
-                alt="Green Architecture"
+                src="/servicesimages/Mobile App Design.png"
+                alt="Blue Architecture"
               />
             </div>
 
             <div className="img-wrapper" data-index="3">
               <img
-                src="https://ik.imagekit.io/kg2nszxjp/GSAP%20pinned%20image%20mask%20reveal%20on%20scroll/trh7c8ufv1dqfrofdytd.webp"
-                alt="Blue Architecture"
+                src="/servicesimages/Web and Mobile App Maintaince.png"
+                alt="Pink Architecture"
               />
             </div>
 
             <div className="img-wrapper" data-index="2">
               <img
-                src="https://ik.imagekit.io/kg2nszxjp/GSAP%20pinned%20image%20mask%20reveal%20on%20scroll/aw6qwur0pggp5r03whjq.webp"
-                alt="Pink Architecture"
+                src="/servicesimages/Custom Dashboard.png"
+                alt="Orange Architecture"
               />
             </div>
-
             <div className="img-wrapper" data-index="1">
               <img
-                src="https://ik.imagekit.io/kg2nszxjp/GSAP%20pinned%20image%20mask%20reveal%20on%20scroll/sqwn8u84zd1besgl0zpd.webp"
+                src="/servicesimages/CMS Development.png"
                 alt="Orange Architecture"
               />
             </div>

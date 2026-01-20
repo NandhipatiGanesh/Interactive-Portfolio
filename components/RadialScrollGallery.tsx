@@ -7,32 +7,27 @@ export default function RadialScrollGalleryExample() {
   const projects = [
     {
       id: 1,
-      title: "Nebula",
-      cat: "Art",
+      title: "React/Next.js",
+      cat: "CustomCode",
       img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80",
     },
     {
       id: 2,
-      title: "Decay",
-      cat: "Photo",
+      title: "Wordpress",
+      cat: "CMS Platform",
       img: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=400&q=80",
     },
     {
       id: 3,
-      title: "Oceanic",
-      cat: "Nature",
+      title: "Framer",
+      cat: "Webdesign Tool",
       img: "https://images.unsplash.com/photo-1468581264429-2548ef9eb732?auto=format&fit=crop&w=400&q=80",
     },
+   
     {
       id: 4,
-      title: "Neon",
-      cat: "Tech",
-      img: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 5,
-      title: "Desert",
-      cat: "Travel",
+      title: "VibeCode",
+      cat: "WebCode",
       img: "https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?auto=format&fit=crop&w=400&q=80",
     },
   ];
@@ -41,10 +36,8 @@ export default function RadialScrollGalleryExample() {
       <div className="bg-background min-h-[600px] text-foreground overflow-hidden rounded-lg border w-full hidden md:block">
         <div className="h-[300px] flex flex-col items-center justify-center space-y-4 pt-8">
           <div className="space-y-1 text-center">
-            <span className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-              Current
-            </span>
-            <h1 className="text-4xl font-bold tracking-tighter">Works</h1>
+          
+            <h1 className="text-4xl font-bold tracking-tighter">Platform that we use</h1>
           </div>
           <div className="animate-bounce text-muted-foreground text-xs">
             ↓ Scroll

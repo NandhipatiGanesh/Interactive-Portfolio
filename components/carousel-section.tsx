@@ -11,9 +11,19 @@ const portfolioItems = [
   "/webImages/luxhospitals.png",
 ]
 
+const portfolioItems2 = [
+  "/webImages/Gutcare.png",
+  "/webImages/avira.png",
+  "/webImages/healthadvait.png",
+  "/webImages/Gutcare.png",
+  "/webImages/avira.png",
+  "/webImages/healthadvait.png",
+]
+
 export function CarouselSection() {
   // Duplicate for seamless loop
   const items = [...portfolioItems, ...portfolioItems]
+  const items2 = [...portfolioItems2, ...portfolioItems2]
 
   return (
     <section className="bg-[#C9FD74] py-24 overflow-hidden">
@@ -33,7 +43,7 @@ export function CarouselSection() {
           className="flex gap-6"
           animate={{ x: [0, "-50%"] }}
           transition={{
-            duration: 30,
+            duration: 20,
             repeat: Number.POSITIVE_INFINITY,
             ease: "linear",
           }}
@@ -59,12 +69,12 @@ export function CarouselSection() {
           className="flex gap-6"
           animate={{ x: ["-50%", 0] }}
           transition={{
-            duration: 30,
+            duration: 20,
             repeat: Number.POSITIVE_INFINITY,
             ease: "linear",
           }}
         >
-          {items.map((src, i) => (
+          {items2.map((src, i) => (
             <div
               key={i}
               className="flex-shrink-0 w-[300px] md:w-[400px] rounded-xl overflow-hidden shadow-2xl"

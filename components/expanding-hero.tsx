@@ -4,9 +4,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const images = [
-  "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1503756234508-e32369269deb?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?q=80&w=800&auto=format&fit=crop",
+  "/mobileviewimages/praanavaidyamobileview.png",
+  "/mobileviewimages/chiragmobile.png",
+  "/mobileviewimages/gutcaremobileview.png",
 ]
 
 export function ExpandingHero() {
@@ -31,7 +31,7 @@ export function ExpandingHero() {
       {/* Stacked images */}
       <div className="relative flex items-center justify-center">
         <motion.div
-          className="absolute w-[280px] md:w-[320px] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl"
+          className="absolute w-[280px] md:w-[420px] aspect-[3/6] rounded-xl overflow-hidden shadow-2xl"
           style={{ rotate: rotate1, x: x1, y, zIndex: 1 }}
           initial={{ clipPath: "inset(100% 0 0 0)" }}
           animate={{ clipPath: "inset(0 0 0 0)" }}
@@ -40,12 +40,12 @@ export function ExpandingHero() {
           <img
             src={images[0] || "/placeholder.svg"}
             alt="Portfolio showcase 1"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         </motion.div>
 
         <motion.div
-          className="relative w-[280px] md:w-[320px] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl"
+          className="relative w-[280px] md:w-[420px] aspect-[3/6] rounded-xl overflow-hidden shadow-2xl"
           style={{ rotate: rotate2, y, zIndex: 2 }}
           initial={{ clipPath: "inset(100% 0 0 0)" }}
           animate={{ clipPath: "inset(0 0 0 0)" }}
@@ -54,12 +54,12 @@ export function ExpandingHero() {
           <img
             src={images[1] || "/placeholder.svg"}
             alt="Portfolio showcase 2"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         </motion.div>
 
         <motion.div
-          className="absolute w-[280px] md:w-[320px] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl"
+          className="absolute w-[280px] md:w-[420px] aspect-[3/6] rounded-xl overflow-hidden shadow-2xl"
           style={{ rotate: rotate3, x: x3, y, zIndex: 1 }}
           initial={{ clipPath: "inset(100% 0 0 0)" }}
           animate={{ clipPath: "inset(0 0 0 0)" }}
@@ -68,7 +68,7 @@ export function ExpandingHero() {
           <img
             src={images[2] || "/placeholder.svg"}
             alt="Portfolio showcase 3"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
         </motion.div>
       </div>
@@ -76,7 +76,7 @@ export function ExpandingHero() {
       
 
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}

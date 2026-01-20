@@ -3,6 +3,19 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/dist/Draggable";
 
+const images = [
+  "/mobileviewimages/advaithealthmobile.png",
+  "/mobileviewimages/chiragmobile.png",
+  "/mobileviewimages/footermobile.png",
+  "/mobileviewimages/gutcaremobileview.png",
+  "/mobileviewimages/landingpraanavaidya.png",
+  "/mobileviewimages/luxhospitals.png",
+  "/mobileviewimages/praanavaidyamobileview.png",
+  "/mobileviewimages/revviewsmobile.png",
+  "/mobileviewimages/somediscussions.png",
+  "/mobileviewimages/webcomponents.png",
+];
+
 export default function IntfiniteScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLUListElement>(null);
@@ -169,104 +182,15 @@ export default function IntfiniteScroll() {
           ref={cardsRef}
           className="absolute w-[1000px] h-72 top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
-          <li
-            className="list-none p-0 m-0 md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-01.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-02.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-03.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-04.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-05.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0 md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-06.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-07.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-01.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-02.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-03.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-04.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-05.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-06.png)",
-            }}
-          ></li>
-          <li
-            className="list-none p-0 m-0  md:w-[330px]  w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
-            style={{
-              backgroundImage:
-                "url(https://assets.codepen.io/16327/portrait-number-07.png)",
-            }}
-          ></li>
+          {images.map((src, i) => (
+            <li
+              key={i}
+              className="list-none p-0 m-0 md:w-[330px] w-[280px] aspect-[9/16] text-center leading-[18rem] text-2xl absolute bg-contain bg-no-repeat top-0 left-[360px] rounded-[0.8rem]"
+              style={{
+                backgroundImage: `url(${src})`,
+              }}
+            ></li>
+          ))}
         </ul>
         <div className="absolute bottom-[25px] left-1/2 -translate-x-1/2 flex items-center justify-center gap-6">
           <button
