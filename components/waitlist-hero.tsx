@@ -257,7 +257,7 @@ export const WaitlistHero = () => {
         <div className="relative z-20 w-full h-full flex flex-col items-center justify-end pb-24 gap-6">
           <div className="w-16 h-16 rounded-2xl shadow-lg overflow-hidden mb-2 ring-1 ring-white/10">
             <img
-              src="https://images.unsplash.com/photo-1684369175833-4b445ad6bfb5?q=80&w=1696&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/profileimage.png"
               alt="App Icon"
               className="w-full h-full object-cover"
             />
@@ -267,14 +267,14 @@ export const WaitlistHero = () => {
             className="text-5xl md:text-6xl font-bold text-center tracking-tight"
             style={{ color: colors.textMain }}
           >
-            Take a screenshot.
+            Have a Idea in Mind ?
           </h1>
 
           <p
             className="text-lg font-medium"
             style={{ color: colors.textSecondary }}
           >
-            Save anything with a screenshot.
+            Let's make it happen.
           </p>
 
           {/* Form / Success Container */}
@@ -391,7 +391,7 @@ export const WaitlistHero = () => {
                       ></path>
                     </svg>
                   ) : (
-                    "Join waitlist"
+                    "Let's Contact"
                   )}
                 </button>
               </div>

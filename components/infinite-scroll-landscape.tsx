@@ -267,6 +267,20 @@ export default function InfiniteScrollLandscape() {
               className="w-full h-full object-fill"
             />
           </li>
+           <li className="list-none p-0 m-0 w-[350px] md:w-[700px] aspect-video md:aspect-auto md:h-[50vh] text-center text-2xl absolute top-1/2 -translate-y-1/2 left-[20px] md:left-[400px] rounded-[0.8rem] shadow-lg overflow-hidden">
+            <img
+              src="/webImages/cryptositeOne.png"
+              alt="Portfolio item"
+              className="w-full h-full object-fill"
+            />
+          </li>
+          <li className="list-none p-0 m-0 w-[350px] md:w-[700px] aspect-video md:aspect-auto md:h-[50vh] text-center text-2xl absolute top-1/2 -translate-y-1/2 left-[20px] md:left-[400px] rounded-[0.8rem] shadow-lg overflow-hidden">
+            <img
+              src="/webImages/CRYPTOSITETWO.png"
+              alt="Portfolio item"
+              className="w-full h-full object-fill"
+            />
+          </li>
         </ul>
         <div className="absolute bottom-[25px] left-1/2 -translate-x-1/2 flex items-center justify-center gap-6">
           <button

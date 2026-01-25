@@ -14,6 +14,8 @@ const images = [
   "/mobileviewimages/revviewsmobile.png",
   "/mobileviewimages/somediscussions.png",
   "/mobileviewimages/webcomponents.png",
+  "/mobileviewimages/cryptositemobileOne.png",
+  "/mobileviewimages/cryptositemobileTwo.png",
 ];
 
 export default function IntfiniteScroll() {

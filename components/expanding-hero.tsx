@@ -26,7 +26,7 @@ export function ExpandingHero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background px-6 py-24"
+      className="relative w-full  min-h-screen mx-auto flex items-center justify-center overflow-hidden bg-gray-100 border border-gray-200 rounded-xl px-6 py-24"
     >
       {/* Stacked images */}
       <div className="relative flex items-center justify-center">

@@ -203,157 +203,117 @@ export const FrequencyCircle = forwardRef<
               ref={containerRef}
               className="w-full min-h-screen flex justify-center py-20"
             >
-              <svg
-                viewBox="-40 -40 580 580"
-                className="w-full max-w-[600px]"
-                style={{ overflow: "visible" }}
-              >
-                {/* Outer circle */}
-                <circle
-                  cx="250"
-                  cy="250"
-                  r="180"
-                  fill="none"
-                  stroke="#d6d2cc"
-                  strokeWidth="1"
-                  className="fc-circle"
-                />
+             <svg
+  viewBox="-40 -40 580 580"
+  className="w-full max-w-[600px]"
+  style={{ overflow: "visible" }}
+>
+  {/* Outer circle */}
+  <circle
+    cx="250"
+    cy="250"
+    r="180"
+    fill="none"
+    stroke="#d3d3d3ff"
+    strokeWidth="1"
+    className="fc-circle"
+  />
 
-                {/* Center text */}
-                <text
-                  x="250"
-                  y="255"
-                  textAnchor="middle"
-                  className="fc-center fill-[#3a3a3a] text-[28px]"
-                >
-                  Frequency
-                </text>
+  {/* Center text */}
+  <text
+    x="250"
+    y="255"
+    textAnchor="middle"
+    className="fc-center fill-[#3a3a3a] text-[24px] font-semibold font-sans"
+  >
+    How I Work
+  </text>
 
-                {/* Top */}
-                <circle
-                  cx="250"
-                  cy="70"
-                  r="8"
-                  className="fc-text fill-[#f5f3ef] stroke-gray-400"
-                />
-                <text
-                  x="250"
-                  y="40"
-                  textAnchor="middle"
-                  className="fc-text fill-gray-500 text-[12px] md:text-[20px] "
-                >
-                  Regulates Nervous System
-                </text>
+  {/* Top */}
+  <circle cx="250" cy="70" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
+  <text
+    x="250"
+    y="40"
+    textAnchor="middle"
+    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
+  >
+    Book an Appointment
+  </text>
 
-                {/* Top Right */}
-                <circle
-                  cx="380"
-                  cy="130"
-                  r="8"
-                  className="fc-text fill-[#f5f3ef] stroke-gray-400"
-                />
-                <text
-                  x="415"
-                  y="135"
-                  className="fc-text fill-gray-500 text-[12px] md:text-[20px] "
-                >
-                  Decreases Anxiety
-                </text>
+  {/* Top Right */}
+  <circle cx="380" cy="130" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
+  <text
+    x="415"
+    y="135"
+    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
+  >
+    Share Requirements
+  </text>
 
-                {/* Right */}
-                <circle
-                  cx="430"
-                  cy="250"
-                  r="8"
-                  className="fc-text fill-[#f5f3ef] stroke-gray-400"
-                />
-                <text
-                  x="460"
-                  y="255"
-                  className="fc-text fill-gray-500 text-[12px] md:text-[20px] "
-                >
-                  Improves Focus
-                </text>
+  {/* Right */}
+  <circle cx="430" cy="250" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
+  <text
+    x="460"
+    y="255"
+    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
+  >
+    Project Planning
+  </text>
 
-                {/* Bottom Right */}
-                <circle
-                  cx="380"
-                  cy="370"
-                  r="8"
-                  className="fc-text fill-[#f5f3ef] stroke-gray-400"
-                />
-                <text
-                  x="415"
-                  y="375"
-                  className="fc-text fill-gray-500 text-[12px] md:text-[20px] "
-                >
-                  Reduces Depression
-                </text>
+  {/* Bottom Right */}
+  <circle cx="380" cy="370" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
+  <text
+    x="415"
+    y="375"
+    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
+  >
+    Figma Design & UX
+  </text>
 
-                {/* Bottom */}
-                <circle
-                  cx="250"
-                  cy="430"
-                  r="8"
-                  className="fc-text fill-[#f5f3ef] stroke-gray-400"
-                />
-                <text
-                  x="250"
-                  y="470"
-                  textAnchor="middle"
-                  className="fc-text fill-gray-500 text-[12px] md:text-[20px]"
-                >
-                  Supports Emotional Release
-                </text>
+  {/* Bottom */}
+  <circle cx="250" cy="430" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
+  <text
+    x="250"
+    y="470"
+    textAnchor="middle"
+    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
+  >
+    Frontend Development
+  </text>
 
-                {/* Top Left */}
-                <circle
-                  cx="120"
-                  cy="130"
-                  r="8"
-                  className="fc-text fill-[#f5f3ef] stroke-gray-400"
-                />
-                <text
-                  x="100"
-                  y="135"
-                  textAnchor="end"
-                  className="fc-text fill-gray-500 text-[12px] md:text-[20px]"
-                >
-                  Expands Self-Transcendence
-                </text>
+  {/* Bottom Left */}
+  <circle cx="120" cy="370" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
+  <text
+    x="100"
+    y="375"
+    textAnchor="end"
+    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
+  >
+    Testing & Optimization
+  </text>
 
-                {/* Left */}
-                <circle
-                  cx="70"
-                  cy="250"
-                  r="8"
-                  className="fc-text fill-[#f5f3ef] stroke-gray-400"
-                />
-                <text
-                  x="50"
-                  y="255"
-                  textAnchor="end"
-                  className="fc-text fill-gray-500 text-[12px] md:text-[20px]"
-                >
-                  Deepens Awareness
-                </text>
+  {/* Left */}
+  <circle cx="70" cy="250" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
+  <text
+    x="50"
+    y="255"
+    textAnchor="end"
+    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
+  >
+    Review & Feedback
+  </text>
 
-                {/* Bottom Left */}
-                <circle
-                  cx="120"
-                  cy="370"
-                  r="8"
-                  className="fc-text fill-[#f5f3ef] stroke-gray-400"
-                />
-                <text
-                  x="100"
-                  y="375"
-                  textAnchor="end"
-                  className="fc-text fill-gray-500 text-[12px] md:text-[20px] "
-                >
-                  Reduces PTSD Symptoms
-                </text>
-              </svg>
+  {/* Top Left */}
+  <circle cx="120" cy="130" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
+  <text
+    x="100"
+    y="135"
+    textAnchor="end"
+    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
+  >
+    Launch & Handover
+  </text>
+</svg>
             </div>
           </div>
         </div>

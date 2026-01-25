@@ -33,16 +33,8 @@ export default function RadialScrollGalleryExample() {
   ];
   return (
     <>
-      <div className="bg-background min-h-[600px] text-foreground overflow-hidden rounded-lg border w-full hidden md:block">
-        <div className="h-[300px] flex flex-col items-center justify-center space-y-4 pt-8">
-          <div className="space-y-1 text-center">
-          
-            <h1 className="text-4xl font-bold tracking-tighter">Platform that we use</h1>
-          </div>
-          <div className="animate-bounce text-muted-foreground text-xs">
-            ↓ Scroll
-          </div>
-        </div>
+      <div className="bg-background min-h-[600px] text-foreground overflow-hidden rounded-lg w-full hidden md:block">
+       
 
         <RadialScrollGallery
           className="!min-h-[600px]"

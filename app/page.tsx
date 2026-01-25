@@ -12,9 +12,9 @@ import { InsightsSection } from "@/components/insights-section";
 import NewFeaturesSection from "@/components/bento-grid"
 import RadialScrollGalleryExample from "@/components/RadialScrollGallery";
 import FeaturesSection from "@/components/scrollreveal";
-
+import { HoverPreview } from "@/components/hover-preview";
 import { ManifestoSection } from "@/components/menifesto-section"
-import {ShowcaseSection } from "@/components/showcase"
+import {HeadingPreview} from "@/components/heading";  
 import {CarouselSection} from "@/components/carousel-section"
 import { MultiStepForm } from "@/components/multistepform";
 export default function PortfolioPage({
@@ -66,30 +66,20 @@ export default function PortfolioPage({
   return (
     <>
     <LenisProvider>
-       <main className="custom-cursor bg-background">
+      <main className="custom-cursor bg-background">
       <CustomCursor />
-
-   
-      <EthicalHero
-        title={heroData.title}
-        subtitle={heroData.subtitle}
-        ctaLabel={heroData.ctaLabel}
-        ctaHref={heroData.ctaHref}
-        features={heroData.features}
-      />
-      <ManifestoSection />
-     
-     
-      <Tabs />
-      <InsightsSection />
+      <HoverPreview />
+      <HeadingPreview  title="My " subtitle="Works"/>
+      <Tabs />   
+      {/* <ManifestoSection /> */}
       {/* <ProjectShowcase /> */}
+      <HeadingPreview title="My " subtitle=" Services" />
       <PinnedImageReveal />
-      <NewFeaturesSection />
-      
 
-      <RadialScrollGalleryExample />
+      <NewFeaturesSection />
+      <HeadingPreview title="How  " subtitle="it works" />
+      {/* <RadialScrollGalleryExample /> */}
       <FrequencyCircle />
-      
       <PricingSection />
       <FeaturesSection />
       <CarouselSection />
@@ -98,7 +88,6 @@ export default function PortfolioPage({
       </div>
       </main>
       </LenisProvider>
-  
     </>
   );
 }

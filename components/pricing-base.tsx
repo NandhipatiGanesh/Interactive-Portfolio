@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
+import {HeadingPreview} from "./heading"
 
 const plans = [
   {
@@ -31,8 +32,8 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Simple, transparent pricing</h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Start free, upgrade when you&apos;re ready.</p>
+          <HeadingPreview title="Simple, transparent" subtitle="pricing" />
+          
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">

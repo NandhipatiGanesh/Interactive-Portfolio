@@ -186,7 +186,7 @@ export default function PinnedImageReveal() {
   return (
     <>
       <div className="container">
-        <div className="spacer"></div>
+    
 
         <div className="arch">
           <div className="arch__left">
@@ -372,7 +372,6 @@ export default function PinnedImageReveal() {
           </div>
         </div>
 
-        <div className="spacer"></div>
       </div>
     </>
   );
