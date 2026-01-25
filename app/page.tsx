@@ -69,19 +69,19 @@ export default function PortfolioPage({
       <main className="custom-cursor bg-background">
       <CustomCursor />
       <HoverPreview />
+      <FrequencyCircle />
+      <HeadingPreview title="My " subtitle=" Services" />
+      <PinnedImageReveal />
       <HeadingPreview  title="My " subtitle="Works"/>
       <Tabs />   
       {/* <ManifestoSection /> */}
       {/* <ProjectShowcase /> */}
-      <HeadingPreview title="My " subtitle=" Services" />
-      <PinnedImageReveal />
+    
 
       <NewFeaturesSection />
-      <HeadingPreview title="How  " subtitle="it works" />
-      {/* <RadialScrollGalleryExample /> */}
-      <FrequencyCircle />
+    
       <PricingSection />
-      <FeaturesSection />
+
       <CarouselSection />
       <div className="flex min-h-screen items-center justify-center bg-background p-4 w-full">
       <MultiStepForm />
