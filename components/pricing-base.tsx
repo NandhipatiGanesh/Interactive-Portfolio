@@ -1,23 +1,36 @@
 "use client"
-
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 import {HeadingPreview} from "./heading"
-
 const plans = [
   {
-    name: "Starter",
-    price: "$12",
-    period: "/month",
-    description: "Perfect for personal portfolios",
-    features: ["5 portfolio pages", "Custom domain", "Basic analytics", "Email support"],
+    name: "BASIC WEBSITE",
+    price: "₹9,999",
+    period: "starting",
+    description: "Best for small businesses & personal websites",
+    features: [
+      "Up to 5 pages website",
+      "WordPress or custom-coded site",
+      "Custom domain setup",
+      "Google Search Console & Analytics",
+      "Unlimited form submissions to email",
+      "Clean & responsive UI/UX",
+    ],
   },
   {
-    name: "Professional",
-    price: "$29",
-    period: "/month",
-    description: "For growing creatives",
-    features: ["Unlimited pages", "Priority support", "Advanced analytics", "Custom branding", "Team collaboration"],
+    name: "PREMIUM WEBSITE",
+    price: "Custom",
+    period: "pricing",
+    description: "For businesses & scalable products",
+    features: [
+      "20+ pages website",
+      "Custom domain & subdomains",
+      "On-page SEO setup",
+      "Advanced forms & user authentication",
+      "Premium UI/UX design",
+      "Performance & security optimization",
+    ],
     popular: true,
   },
 ]
@@ -71,7 +84,8 @@ export function PricingSection() {
                 ))}
               </ul>
 
-              <button
+              <Link
+              href="tel:_+917569753062"
                 className={`w-full mt-8 py-3 px-6 rounded-full font-medium transition-colors ${
                   plan.popular
                     ? "bg-[#C9FD74] text-black hover:bg-[#C9FD74]/90"
@@ -79,7 +93,7 @@ export function PricingSection() {
                 }`}
               >
                 Get started
-              </button>
+              </Link>
             </motion.div>
           ))}
         </div>
