@@ -220,7 +220,7 @@ const HoverLink = ({
 }: HighlightProps) => {
   return (
     <h2
-      className={`inline-block px-4 py-1 rounded-md bg-[#C8FC75] font-bold hover-link w-[auto] h-[auto] ${className}`}
+      className={`inline-block px-4 py-1 mx-1 my-1 rounded-md bg-[#C8FC75] font-bold hover-link w-[auto] h-[auto] ${className}`}
       onMouseEnter={
         previewKey && onHoverStart
           ? (e) => onHoverStart(previewKey, e)
@@ -346,8 +346,8 @@ export function HoverPreview() {
             <h2
               className="font-bold"
               style={{
-                letterSpacing: "1px",
-                lineHeight: "1.5em",
+                letterSpacing: "0.5px",
+                lineHeight: "2em",
               }}
             >
               I’m Ganesh, a frontend developer building fast, scalable{" "}

@@ -3,323 +3,154 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React, {
-  useRef,
-  HTMLAttributes,
-  forwardRef,
-  useState,
-  useMemo,
-  Ref,
-  useEffect,
-} from "react";
+import { useRef, HTMLAttributes, forwardRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export interface RadialScrollGalleryProps
-  extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
-  scrollDuration?: number;
-  visiblePercentage?: number;
-  baseRadius?: number;
-  mobileRadius?: number;
-  startTrigger?: string;
-  onItemSelect?: (index: number) => void;
-  direction?: "ltr" | "rtl";
-  disabled?: boolean;
-}
+  extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {}
 
-function useMergeRefs<T>(...refs: (Ref<T> | undefined)[]) {
-  return useMemo(() => {
-    if (refs.every((ref) => ref == null)) return null;
-    return (node: T) => {
-      refs.forEach((ref) => {
-        if (typeof ref === "function") {
-          ref(node);
-        } else if (ref != null) {
-          (ref as React.MutableRefObject<T | null>).current = node;
-        }
-      });
-    };
-  }, [refs]);
-}
-
-function useResponsiveValue(baseValue: number, mobileValue: number) {
-  const [value, setValue] = useState(baseValue);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const handleResize = () => {
-      setValue(window.innerWidth < 768 ? mobileValue : baseValue);
-    };
-
-    handleResize();
-
-    let timeoutId: NodeJS.Timeout;
-    const debouncedResize = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(handleResize, 100);
-    };
-
-    window.addEventListener("resize", debouncedResize);
-    return () => {
-      window.removeEventListener("resize", debouncedResize);
-      clearTimeout(timeoutId);
-    };
-  }, [baseValue, mobileValue]);
-
-  return value;
-}
+const skills = [
+  { label: "Product Design", x: "50%", y: "15%", rotate: -2 },
+  { label: "Design Systems", x: "25%", y: "22%", rotate: -8 },
+  { label: "User Experience Design", x: "73%", y: "20%", rotate: 5 },
+  { label: "User Research", x: "15%", y: "48%", rotate: -12 },
+  { label: "User Interface Design", x: "83%", y: "45%", rotate: 8 },
+  { label: "Pitch Deck Design", x: "18%", y: "72%", rotate: -6 },
+  { label: "Framer Development", x: "48%", y: "82%", rotate: 3 },
+  { label: "Visual Design", x: "70%", y: "75%", rotate: -4 },
+  { label: "Branding", x: "82%", y: "60%", rotate: 10 },
+];
 
 export const FrequencyCircle = forwardRef<
   HTMLDivElement,
   RadialScrollGalleryProps
->(
-  (
-    {
-      scrollDuration = 2500,
-      visiblePercentage = 45,
-      baseRadius = 550,
-      mobileRadius = 220,
-      className = "",
-      startTrigger = "center center",
-      onItemSelect,
-      direction = "ltr",
-      disabled = false,
-      ...rest
-    },
-    ref
-  ) => {
-    const wrapperRef = useRef<HTMLDivElement>(null);
-    const pinRef = useRef<HTMLDivElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const childRef = useRef<HTMLLIElement>(null);
+>(({ className = "", ...rest }, _ref) => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-    const mergedRef = useMergeRefs(ref, pinRef);
+  useGSAP(() => {
+    if (!containerRef.current || !wrapperRef.current) return;
 
-    const [childSize, setChildSize] = useState<{ w: number; h: number } | null>(
-      null
+    const centerContent = containerRef.current.querySelector(".fc-center-content");
+    const pills = containerRef.current.querySelectorAll(".fc-pill");
+
+    // Set initial states - everything hidden
+    gsap.set(centerContent, { opacity: 0, scale: 0.5 });
+    gsap.set(pills, { opacity: 0, scale: 0 });
+
+    // Create the pinned scroll animation
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: wrapperRef.current,
+        start: "top top",
+        end: "+=3000",
+        pin: true,
+        scrub: 1,
+        pinSpacing: true,
+      },
+    });
+
+    // Step 1: Reveal center content (0% - 20% of scroll)
+    tl.to(
+      centerContent,
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.2,
+        ease: "back.out(1.7)",
+      },
+      0
     );
-    const [isMounted, setIsMounted] = useState(false);
-    const currentRadius = useResponsiveValue(baseRadius, mobileRadius);
-    const circleDiameter = currentRadius * 2;
 
-    const { visibleDecimal, hiddenDecimal } = useMemo(() => {
-      const clamped = Math.max(10, Math.min(100, visiblePercentage));
-      const v = clamped / 100;
-      return { visibleDecimal: v, hiddenDecimal: 1 - v };
-    }, [visiblePercentage]);
-
-    useEffect(() => {
-      setIsMounted(true);
-
-      if (!childRef.current) return;
-
-      const observer = new ResizeObserver((entries) => {
-        let hasChanged = false;
-        for (const entry of entries) {
-          setChildSize({
-            w: entry.contentRect.width,
-            h: entry.contentRect.height,
-          });
-          hasChanged = true;
-        }
-        if (hasChanged) {
-          ScrollTrigger.refresh();
-        }
-      });
-
-      observer.observe(childRef.current);
-      return () => observer.disconnect();
-    }, []);
-
-    useGSAP(() => {
-      if (!containerRef.current) return;
-
-      const circle = containerRef.current.querySelector(".fc-circle");
-      const centerText = containerRef.current.querySelector(".fc-center");
-      const texts = containerRef.current.querySelectorAll(".fc-text");
-
-      // Set initial states
-      gsap.set([circle, centerText], { opacity: 0, scale: 0.8 });
-      gsap.set(texts, { opacity: 0, scale: 0.5 });
-
-      // First timeline: entrance animation (normal, not scrubbed)
-      const entranceTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top center",
-          toggleActions: "play none none none",
+    // Step 2: Reveal pills one by one (20% - 90% of scroll)
+    pills.forEach((pill, index) => {
+      tl.to(
+        pill,
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.08,
+          ease: "back.out(2)",
         },
-      });
+        0.2 + index * 0.07
+      );
+    });
 
-      // Animate circle and center text on entrance
-      entranceTl.to([circle, centerText], {
-        opacity: 1,
-        scale: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      });
+    // Step 3: Hold at end so user can see everything (90% - 100%)
+    tl.to({}, { duration: 0.2 });
 
-      // Second timeline: scroll-based reveal of benefit texts
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "+=2000", // How much scroll distance to reveal everything
-          pin: true, // Lock the section
-          scrub: 1, // Smooth scrubbing effect
-          anticipatePin: 1,
-        },
-      });
+  }, []);
 
-      // Animate all benefit texts based on scroll
-      scrollTl.to(texts, {
-        opacity: 1,
-        scale: 1,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: "back.out(1.2)",
-      });
-    }, []);
-
-    const scaleFactor = 1.25;
-    const calculatedBuffer = childSize
-      ? childSize.h * scaleFactor - childSize.h + 60
-      : 150;
-
-    const visibleAreaHeight = childSize
-      ? circleDiameter * visibleDecimal + childSize.h / 2 + calculatedBuffer
-      : circleDiameter * visibleDecimal + 200;
-
-    return (
-      <>
-        <div
-          ref={mergedRef}
-          className={`min-h-screen w-full relative flex items-center justify-center ${className}`}
-          {...rest}
-        >
-          <div className="relative w-full overflow-hidden">
-            <div
-              ref={containerRef}
-              className="w-full min-h-screen flex justify-center py-20"
+  return (
+    <div
+      ref={wrapperRef}
+      className={`w-full relative bg-[#f5f3ef] ${className}`}
+      style={{ minHeight: "100vh" }}
+      {...rest}
+    >
+      <div
+        ref={containerRef}
+        className="w-full h-screen flex items-center justify-center relative overflow-hidden"
+      >
+        {/* Center Content */}
+        <div className="fc-center-content absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-20 max-w-lg px-4">
+          {/* Icon */}
+          <div className="mb-6 flex justify-center">
+            <svg
+              width="70"
+              height="70"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-             <svg
-  viewBox="-40 -40 580 580"
-  className="w-full max-w-[600px]"
-  style={{ overflow: "visible" }}
->
-  {/* Outer circle */}
-  <circle
-    cx="250"
-    cy="250"
-    r="180"
-    fill="none"
-    stroke="#d3d3d3ff"
-    strokeWidth="1"
-    className="fc-circle"
-  />
-
-  {/* Center text */}
-  <text
-    x="250"
-    y="255"
-    textAnchor="middle"
-    className="fc-center fill-[#3a3a3a] text-[24px] font-semibold font-sans"
-  >
-    How I Work
-  </text>
-
-  {/* Top */}
-  <circle cx="250" cy="70" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
-  <text
-    x="250"
-    y="40"
-    textAnchor="middle"
-    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
-  >
-    Book an Appointment
-  </text>
-
-  {/* Top Right */}
-  <circle cx="380" cy="130" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
-  <text
-    x="415"
-    y="135"
-    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
-  >
-    Share Requirements
-  </text>
-
-  {/* Right */}
-  <circle cx="430" cy="250" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
-  <text
-    x="460"
-    y="255"
-    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
-  >
-    Project Planning
-  </text>
-
-  {/* Bottom Right */}
-  <circle cx="380" cy="370" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
-  <text
-    x="415"
-    y="375"
-    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
-  >
-    Figma Design & UX
-  </text>
-
-  {/* Bottom */}
-  <circle cx="250" cy="430" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
-  <text
-    x="250"
-    y="470"
-    textAnchor="middle"
-    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
-  >
-    Frontend Development
-  </text>
-
-  {/* Bottom Left */}
-  <circle cx="120" cy="370" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
-  <text
-    x="100"
-    y="375"
-    textAnchor="end"
-    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
-  >
-    Testing & Optimization
-  </text>
-
-  {/* Left */}
-  <circle cx="70" cy="250" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
-  <text
-    x="50"
-    y="255"
-    textAnchor="end"
-    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
-  >
-    Review & Feedback
-  </text>
-
-  {/* Top Left */}
-  <circle cx="120" cy="130" r="8" className="fc-text fill-[#f5f3ef] stroke-gray-400" />
-  <text
-    x="100"
-    y="135"
-    textAnchor="end"
-    className="fc-text fill-gray-500 text-[12px] md:text-[18px]"
-  >
-    Launch & Handover
-  </text>
-</svg>
-            </div>
+              <ellipse cx="32" cy="54" rx="18" ry="4" fill="#1a365d" opacity="0.15" />
+              <rect x="22" y="44" width="20" height="10" rx="2" fill="#1a365d" />
+              <path d="M18 44h28l-4 4H22l-4-4z" fill="#2d4a6f" />
+              <ellipse cx="32" cy="26" rx="22" ry="10" fill="#ff6b35" />
+              <ellipse cx="32" cy="26" rx="30" ry="5" fill="#ff6b35" opacity="0.4" />
+              <ellipse cx="32" cy="22" rx="14" ry="18" fill="#1a365d" />
+              <circle cx="26" cy="18" r="3" fill="#fff" opacity="0.5" />
+            </svg>
           </div>
+
+          {/* Title */}
+          <h2
+            className="text-4xl md:text-5xl lg:text-6xl text-[#1a365d] mb-5"
+            style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}
+          >
+            What I bring to the table
+          </h2>
+
+          {/* Subtitle */}
+          <p className="text-[#4a5568] text-lg md:text-xl leading-relaxed max-w-md mx-auto">
+            Digital experiences that engage users and help your startup stand out from day one
+          </p>
         </div>
 
-      </>
-    );
-  }
-);
+        {/* Floating Pills */}
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className="fc-pill absolute z-10"
+            style={{
+              left: skill.x,
+              top: skill.y,
+            }}
+          >
+            <div
+              className="px-5 py-3 rounded-full bg-[#dbeafe] text-[#1a365d] font-medium text-sm md:text-base whitespace-nowrap shadow-sm"
+              style={{
+                transform: `rotate(${skill.rotate}deg)`,
+              }}
+            >
+              {skill.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+});
 
+FrequencyCircle.displayName = "FrequencyCircle";
