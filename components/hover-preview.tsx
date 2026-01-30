@@ -61,12 +61,12 @@ const styles = `
 
   .hover-preview-container {
     min-height: 100vh;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px;
-   
+
     overflow-x: hidden;
     position: relative;
   }
