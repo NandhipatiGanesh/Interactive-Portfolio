@@ -1,31 +1,28 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState, useCallback, useRef, useEffect } from "react"
-
-
+import type React from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 
 type HighlightProps = {
-children: React.ReactNode
-className?: string
-previewKey?: string
-onHoverStart?: (key: string, e: React.MouseEvent) => void
-onHoverMove?: (e: React.MouseEvent) => void
-onHoverEnd?: () => void
-}
+  children: React.ReactNode;
+  className?: string;
+  previewKey?: string;
+  onHoverStart?: (key: string, e: React.MouseEvent) => void;
+  onHoverMove?: (e: React.MouseEvent) => void;
+  onHoverEnd?: () => void;
+};
 type contentData = {
-    title? : string
-    subtitle? : string
-    
-}
+  title?: string;
+  subtitle?: string;
+};
 const previewData = {
   Website: {
-    image: "https://images.unsplash.com/photo-1695144244472-a4543101ef35?w=560&h=320&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1695144244472-a4543101ef35?w=560&h=320&fit=crop",
     title: "Midjourney",
     subtitle: "Create stunning AI-generated artwork",
   },
-  
-}
+};
 
 const styles = `
 
@@ -165,7 +162,7 @@ const styles = `
     font-size: 0.75rem;
     color: #666;
   }
-`
+`;
 
 const HoverLink = ({
   previewKey,
@@ -173,19 +170,23 @@ const HoverLink = ({
   onHoverStart,
   onHoverMove,
   onHoverEnd,
-  className
+  className,
 }: HighlightProps) => {
   return (
     <h2
       className={`inline-block px-4 py-1 rounded-md bg-[#C8FC75] font-bold hover-link w-[auto] h-[auto] ${className}`}
-     onMouseEnter={previewKey && onHoverStart ? (e) => onHoverStart(previewKey, e) : undefined}
-onMouseMove={onHoverMove ? (e) => onHoverMove(e) : undefined}
-onMouseLeave={onHoverEnd ? () => onHoverEnd() : undefined}
+      onMouseEnter={
+        previewKey && onHoverStart
+          ? (e) => onHoverStart(previewKey, e)
+          : undefined
+      }
+      onMouseMove={onHoverMove ? (e) => onHoverMove(e) : undefined}
+      onMouseLeave={onHoverEnd ? () => onHoverEnd() : undefined}
     >
       {children}
     </h2>
-  )
-}
+  );
+};
 
 const PreviewCard = ({
   data,
@@ -193,12 +194,12 @@ const PreviewCard = ({
   isVisible,
   cardRef,
 }: {
-  data: (typeof previewData)[keyof typeof previewData] | null
-  position: { x: number; y: number }
-  isVisible: boolean
-  cardRef: React.RefObject<HTMLDivElement | null>
+  data: (typeof previewData)[keyof typeof previewData] | null;
+  position: { x: number; y: number };
+  isVisible: boolean;
+  cardRef: React.RefObject<HTMLDivElement | null>;
 }) => {
-  if (!data) return null
+  if (!data) return null;
 
   return (
     <div
@@ -220,104 +221,110 @@ const PreviewCard = ({
         <div className="preview-card-subtitle">{data.subtitle}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export function HeadingPreview({ title, subtitle }: contentData) {
-  const [activePreview, setActivePreview] = useState<(typeof previewData)[keyof typeof previewData] | null>(null)
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [isVisible, setIsVisible] = useState(false)
-  const cardRef = useRef<HTMLDivElement>(null)
+  const [activePreview, setActivePreview] = useState<
+    (typeof previewData)[keyof typeof previewData] | null
+  >(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   // Preload all images on mount
   useEffect(() => {
     Object.entries(previewData).forEach(([, data]) => {
-      const img = new Image()
-      img.crossOrigin = "anonymous"
-      img.src = data.image
-    })
-  }, [])
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.src = data.image;
+    });
+  }, []);
 
   const updatePosition = useCallback((e: React.MouseEvent | MouseEvent) => {
-    const cardWidth = 300
-    const cardHeight = 250 // Approximate card height
-    const offsetX = 15
-    const offsetY = 20 // Gap between cursor and card bottom
+    const cardWidth = 300;
+    const cardHeight = 250; // Approximate card height
+    const offsetX = 15;
+    const offsetY = 20; // Gap between cursor and card bottom
 
     // Position card so its bottom-left is above the cursor
-    let x = e.clientX - cardWidth / 2 // Center horizontally on cursor
-    let y = e.clientY - cardHeight - offsetY // Position above cursor
+    let x = e.clientX - cardWidth / 2; // Center horizontally on cursor
+    let y = e.clientY - cardHeight - offsetY; // Position above cursor
 
     // Boundary checks - keep card on screen
     if (x + cardWidth > window.innerWidth - 20) {
-      x = window.innerWidth - cardWidth - 20
+      x = window.innerWidth - cardWidth - 20;
     }
     if (x < 20) {
-      x = 20
+      x = 20;
     }
 
     // If card would go above viewport, position below cursor instead
     if (y < 20) {
-      y = e.clientY + offsetY
+      y = e.clientY + offsetY;
     }
 
-    setPosition({ x, y })
-  }, [])
+    setPosition({ x, y });
+  }, []);
 
   const handleHoverStart = useCallback(
     (key: string, e: React.MouseEvent) => {
-      setActivePreview(previewData[key as keyof typeof previewData])
-      setIsVisible(true)
-      updatePosition(e)
+      setActivePreview(previewData[key as keyof typeof previewData]);
+      setIsVisible(true);
+      updatePosition(e);
     },
     [updatePosition],
-  )
+  );
 
   const handleHoverMove = useCallback(
     (e: React.MouseEvent) => {
       if (isVisible) {
-        updatePosition(e)
+        updatePosition(e);
       }
     },
     [isVisible, updatePosition],
-  )
+  );
 
   const handleHoverEnd = useCallback(() => {
-    setIsVisible(false)
-  }, [])
+    setIsVisible(false);
+  }, []);
 
   return (
     <>
       <style>{styles}</style>
-      <div className="heading-preview-container mt-8 ">
+      <div className="heading-preview-container mt-8 mx-auto relative w-[60%]">
         <div className="ambient-glow" />
 
-        <div className="content-container" >
+        <div className="content-container text-center">
           <div className="text-block">
-            <h2 className="font-bold" style={{
-          letterSpacing:"1px",
-          lineHeight:"1.5em"
-        }}>
-              {title} {" "}
+            <h2
+              style={{
+                fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.84px",
+                lineHeight: "1.5em",
+              }}
+            >
+              {title}{" "}
               <HoverLink
                 previewKey="Website"
                 onHoverStart={handleHoverStart}
                 onHoverMove={handleHoverMove}
                 onHoverEnd={handleHoverEnd}
               >
-              {subtitle}
+                {subtitle}
               </HoverLink>
             </h2>
-
-           
           </div>
-         
         </div>
-        
 
-        <PreviewCard data={activePreview} position={position} isVisible={isVisible} cardRef={cardRef} />
+        <PreviewCard
+          data={activePreview}
+          position={position}
+          isVisible={isVisible}
+          cardRef={cardRef}
+        />
       </div>
-    
     </>
-  )
+  );
 }

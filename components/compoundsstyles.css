@@ -28,8 +28,7 @@
     place-items: center;
 
     h2.header {
-
-      font-size: 42px;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       font-weight: 800;
       letter-spacing: -0.84px;
     }
@@ -37,7 +36,7 @@
     p.desc {
       color: rgba(18, 18, 18, 0.8);
       font-size: 18px;
-      
+
       margin-block: 6px 28px;
       line-height: normal;
       font-weight: 500;
