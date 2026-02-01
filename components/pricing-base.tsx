@@ -85,8 +85,8 @@ export function PricingSection() {
               </ul>
 
               <Link
-              href="tel:_+917569753062"
-                className={`w-full mt-8 py-3 px-6 rounded-full font-medium transition-colors ${
+                href="tel:+917569753062"
+                className={`block w-full mt-8 py-3 px-6 rounded-full font-medium transition-colors text-center ${
                   plan.popular
                     ? "bg-[#C9FD74] text-black hover:bg-[#C9FD74]/90"
                     : "bg-secondary text-foreground hover:bg-accent/30"

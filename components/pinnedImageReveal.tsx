@@ -9,6 +9,14 @@ import FlipButton from "@/components/ui/FlipButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const scrollToPricing = (e: React.MouseEvent) => {
+  e.preventDefault();
+  const pricingSection = document.getElementById("pricing");
+  if (pricingSection) {
+    pricingSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
 export default function PinnedImageReveal() {
   useEffect(() => {
     // Initialize Lenis smooth scroll
@@ -43,10 +51,10 @@ export default function PinnedImageReveal() {
     function handleMobileLayout() {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
       const leftItems = gsap.utils.toArray<HTMLElement>(
-        ".arch__left .arch__info"
+        ".arch__left .arch__info",
       );
       const rightItems = gsap.utils.toArray<HTMLElement>(
-        ".arch__right .img-wrapper"
+        ".arch__right .img-wrapper",
       );
 
       if (isMobile) {
@@ -116,7 +124,7 @@ export default function PinnedImageReveal() {
                   duration: 1.5,
                   ease: "power2.inOut",
                 },
-                0
+                0,
               )
               .to(
                 currentImage,
@@ -126,7 +134,7 @@ export default function PinnedImageReveal() {
                   duration: 1.5,
                   ease: "none",
                 },
-                0
+                0,
               )
               .to(
                 nextImage,
@@ -135,7 +143,7 @@ export default function PinnedImageReveal() {
                   duration: 1.5,
                   ease: "none",
                 },
-                0
+                0,
               );
           }
 
@@ -186,35 +194,26 @@ export default function PinnedImageReveal() {
   return (
     <>
       <div className="container">
-    
-
         <div className="arch">
           <div className="arch__left">
             <div className="arch__info" id="green-arch">
               <div className="content">
                 <h2 className="header">Website Design</h2>
                 <p className="desc">
-                  Create stunning, responsive websites that captivate your audience. 
-                  We craft beautiful layouts with modern design principles, optimized 
-                  for performance and user experience across all devices.
+                  Create stunning, responsive websites that captivate your
+                  audience. We craft beautiful layouts with modern design
+                  principles, optimized for performance and user experience
+                  across all devices.
                 </p>
                 <a
                   className="link px-6"
-                  href="#"
+                  href="#pricing" onClick={scrollToPricing}
                   style={{ backgroundColor: "#c9fd74" }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="11"
-                    height="11"
-                    fill="none"
-                  >
-                    <path
-                      fill="#121212"
-                      d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z"
-                    />
-                  </svg>{" "}
-                  <FlipButton className="justify-center items-center px-4" label="Get Started" />
+                  <FlipButton
+                    className="justify-center items-center px-4"
+                    label="Get Started"
+                  />
                 </a>
               </div>
             </div>
@@ -223,27 +222,20 @@ export default function PinnedImageReveal() {
               <div className="content">
                 <h2 className="header">Mobile App Design</h2>
                 <p className="desc">
-                  Design intuitive mobile experiences for iOS and Android. 
-                  From concept to prototype, we build apps that users love with 
-                  seamless navigation, engaging interfaces, and pixel-perfect design.
+                  Design intuitive mobile experiences for iOS and Android. From
+                  concept to prototype, we build apps that users love with
+                  seamless navigation, engaging interfaces, and pixel-perfect
+                  design.
                 </p>
                 <a
                   className="link px-6"
-                  href="#"
+                  href="#pricing" onClick={scrollToPricing}
                   style={{ backgroundColor: "#c9fd74" }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="11"
-                    height="11"
-                    fill="none"
-                  >
-                    <path
-                      fill="#121212"
-                      d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z"
-                    />
-                  </svg>{" "}
-                  <FlipButton className="justify-center items-center px-4" label="Get Started" />
+                  <FlipButton
+                    className="justify-center items-center px-4"
+                    label="Get Started"
+                  />
                 </a>
               </div>
             </div>
@@ -252,27 +244,20 @@ export default function PinnedImageReveal() {
               <div className="content">
                 <h2 className="header">Web & Mobile App Maintenance</h2>
                 <p className="desc">
-                  Keep your applications running smoothly with our comprehensive 
-                  maintenance services. We provide regular updates, bug fixes, 
-                  performance optimization, and security patches for long-term success.
+                  Keep your applications running smoothly with our comprehensive
+                  maintenance services. We provide regular updates, bug fixes,
+                  performance optimization, and security patches for long-term
+                  success.
                 </p>
                 <a
                   className="link px-6"
-                  href="#"
+                  href="#pricing" onClick={scrollToPricing}
                   style={{ backgroundColor: "#c9fd74" }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="11"
-                    height="11"
-                    fill="none"
-                  >
-                    <path
-                      fill="#121212"
-                      d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z"
-                    />
-                  </svg>{" "}
-                  <FlipButton className="justify-center items-center px-4" label="Get Started" />
+                  <FlipButton
+                    className="justify-center items-center px-4"
+                    label="Get Started"
+                  />
                 </a>
               </div>
             </div>
@@ -281,27 +266,20 @@ export default function PinnedImageReveal() {
               <div className="content">
                 <h2 className="header">Custom Dashboard</h2>
                 <p className="desc">
-                  Build powerful, data-driven dashboards tailored to your business needs. 
-                  Visualize complex data with interactive charts, real-time analytics, 
-                  and intuitive controls for better decision-making.
+                  Build powerful, data-driven dashboards tailored to your
+                  business needs. Visualize complex data with interactive
+                  charts, real-time analytics, and intuitive controls for better
+                  decision-making.
                 </p>
                 <a
                   className="link px-6"
-                  href="#"
+                  href="#pricing" onClick={scrollToPricing}
                   style={{ backgroundColor: "#c9fd74" }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="11"
-                    height="11"
-                    fill="none"
-                  >
-                    <path
-                      fill="#121212"
-                      d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z"
-                    />
-                  </svg>{" "}
-                  <FlipButton className="justify-center items-center px-4" label="Get Started" />
+                  <FlipButton
+                    className="justify-center items-center px-4"
+                    label="Get Started"
+                  />
                 </a>
               </div>
             </div>
@@ -309,27 +287,20 @@ export default function PinnedImageReveal() {
               <div className="content">
                 <h2 className="header">CMS Development</h2>
                 <p className="desc">
-                  Leverage powerful platforms like WordPress and Framer to build 
-                  flexible, easy-to-manage websites. Perfect for content-heavy sites, 
-                  blogs, and businesses that need quick updates without coding.
+                  Leverage powerful platforms like WordPress and Framer to build
+                  flexible, easy-to-manage websites. Perfect for content-heavy
+                  sites, blogs, and businesses that need quick updates without
+                  coding.
                 </p>
                 <a
                   className="link px-6"
-                  href="#"
+                  href="#pricing" onClick={scrollToPricing}
                   style={{ backgroundColor: "#c9fd74" }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="11"
-                    height="11"
-                    fill="none"
-                  >
-                    <path
-                      fill="#121212"
-                      d="M5 2c0 1.105-1.895 2-3 2a2 2 0 1 1 0-4c1.105 0 3 .895 3 2ZM11 3.5c0 1.105-.895 3-2 3s-2-1.895-2-3a2 2 0 1 1 4 0ZM6 9a2 2 0 1 1-4 0c0-1.105.895-3 2-3s2 1.895 2 3Z"
-                    />
-                  </svg>{" "}
-                  <FlipButton className="justify-center items-center px-4" label="Get Started" />
+                  <FlipButton
+                    className="justify-center items-center px-4"
+                    label="Get Started"
+                  />
                 </a>
               </div>
             </div>
@@ -337,10 +308,7 @@ export default function PinnedImageReveal() {
 
           <div className="arch__right">
             <div className="img-wrapper" data-index="5">
-              <img
-                src="/servicesimages/Web Design.png"
-                alt="Website Design"
-              />
+              <img src="/servicesimages/Web Design.png" alt="Website Design" />
             </div>
 
             <div className="img-wrapper" data-index="4">
@@ -371,7 +339,6 @@ export default function PinnedImageReveal() {
             </div>
           </div>
         </div>
-
       </div>
     </>
   );

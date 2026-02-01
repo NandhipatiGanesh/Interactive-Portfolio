@@ -17,40 +17,34 @@ type HighlightProps = {
 
 const previewData = {
   Website: {
-    image:
-      "https://images.unsplash.com/photo-1695144244472-a4543101ef35?w=560&h=320&fit=crop",
-    title: "Midjourney",
-    subtitle: "Create stunning AI-generated artwork",
+    image: "/websiteshoverimage.png",
+    title: "Website",
+    subtitle: "Will Create Stunning Websites",
   },
   Dashboard: {
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=560&h=320&fit=crop",
+    image: "/dashboard-template.webp",
     title: "Dashboard",
     subtitle: "Analytics & data visualization",
   },
   MobileApp: {
-    image:
-      "https://images.unsplash.com/photo-1718241905696-cb34c2c07bed?w=560&h=320&fit=crop",
-    title: "Leonardo AI",
-    subtitle: "Production-ready creative assets",
+    image: "/mobile apps.png",
+    title: "Mobile App",
+    subtitle: "Cross-platform mobile applications",
   },
   Nextjs: {
-    image:
-      "https://images.unsplash.com/photo-1718241905696-cb34c2c07bed?w=560&h=320&fit=crop",
-    title: "Leonardo AI",
-    subtitle: "Production-ready creative assets",
+    image: "https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_dark_background.png",
+    title: "Next.js",
+    subtitle: "Server-side rendering & blazing fast performance",
   },
   React: {
-    image:
-      "https://images.unsplash.com/photo-1718241905696-cb34c2c07bed?w=560&h=320&fit=crop",
-    title: "Leonardo AI",
-    subtitle: "Production-ready creative assets",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png",
+    title: "React",
+    subtitle: "Component-based interactive user interfaces",
   },
   ReactNative: {
-    image:
-      "https://images.unsplash.com/photo-1718241905696-cb34c2c07bed?w=560&h=320&fit=crop",
-    title: "Leonardo AI",
-    subtitle: "Production-ready creative assets",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png",
+    title: "React Native",
+    subtitle: "Native mobile apps with single codebase",
   },
 };
 const FADE_UP_VARIANTS: Variants = {
@@ -347,7 +341,7 @@ export function HoverPreview() {
               className="font-bold"
               style={{
                 letterSpacing: "0.5px",
-                lineHeight: "2em",
+                lineHeight: "1.6em",
               }}
             >
               I’m Ganesh, a frontend developer building fast, scalable{" "}
@@ -380,33 +374,15 @@ export function HoverPreview() {
                 mobile apps
               </HoverLink>{" "}
               End-to-end development using {""}
-              <HoverLink
-                previewKey="Nextjs"
-                onHoverStart={handleHoverStart}
-                onHoverMove={handleHoverMove}
-                onHoverEnd={handleHoverEnd}
-                className="!bg-[#45e0a8]"
-              >
+              <HoverLink className="!bg-transparent !px-0">
                 Next js
               </HoverLink>
               ,{" "}
-              <HoverLink
-                previewKey="React"
-                onHoverStart={handleHoverStart}
-                onHoverMove={handleHoverMove}
-                onHoverEnd={handleHoverEnd}
-                className="!bg-[#c3e2ff]"
-              >
+              <HoverLink className="!bg-transparent !px-0">
                 React
               </HoverLink>
               , and{" "}
-              <HoverLink
-                previewKey="ReactNative"
-                onHoverStart={handleHoverStart}
-                onHoverMove={handleHoverMove}
-                onHoverEnd={handleHoverEnd}
-                className="!bg-[#FED101]"
-              >
+              <HoverLink className="!bg-transparent !px-0">
                 React Native
               </HoverLink>{" "}
               from design to production.

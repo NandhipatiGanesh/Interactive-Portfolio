@@ -264,7 +264,7 @@ export const WaitlistHero = () => {
           </div>
 
           <h1
-            className="text-5xl md:text-6xl font-bold text-center tracking-tight"
+            className="text-4xl md:text-6xl font-bold text-center tracking-tight"
             style={{ color: colors.textMain }}
           >
             Have a Idea in Mind ?
