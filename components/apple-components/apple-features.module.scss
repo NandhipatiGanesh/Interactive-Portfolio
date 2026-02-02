@@ -1,0 +1,128 @@
+
+.container {
+  padding: 0 2rem;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 90%;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+.imageContainer {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 500px; 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  border-radius: 2rem;
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+}
+
+.control {
+  // Variables moved from .root to here
+  --bg-color: #111111;
+  --color: rgb(245, 245, 247);
+  --color-accent-100: #517c9e;
+  --td: .5s;
+  --grid-gap: 5rem;
+
+  color-scheme: dark;
+  interpolate-size: allow-keywords;
+  color: var(--color);
+
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+  justify-content: center;
+  // min-height: 80vh; // Removed fixed min-height to adapt to content/grid
+  
+  padding: 2rem 0; // Removed horizontal padding since container handles it
+  border-radius: 2rem;
+
+
+  &__item {
+    display: block;
+    margin: 0;
+    position: relative;
+    width: max-content;
+    backdrop-filter: blur(20px);
+    background-color: #1e1e20;
+    border-radius: 1.75rem;
+    transition-property: width, background-color;
+    transition-duration: var(--td);
+    transition-behavior: allow-discrete;
+    overflow: clip;
+
+    &[open]{
+      --option-item-opacity: 1;
+      --option-label-display: none;
+      --option-item-content-height: auto;
+
+      &::details-content {
+        transition-duration: 0;
+      }
+    }
+
+
+    &:focus-visible,
+    &:hover {
+      background-color: #272729;
+    }
+
+    &::details-content {
+      opacity: var(--option-item-opacity, 0);
+      height: var(--option-item-content-height, 0);
+      transition-property: height, content-visibility, opacity;
+      transition-duration: var(--td);
+      transition-delay: 0s, 0s, var(--td);
+      transition-timing-function: cubic-bezier(0.42, 0, 0.47, 1.91);
+      transition-behavior: allow-discrete, allow-discrete;
+    }
+
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__label {
+    line-height: 4rem;
+    list-style: none;
+    display: var(--option-label-display, flex);
+    gap: .8rem;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1.05px;
+    align-items: center;
+    padding-inline: 1rem 2rem;
+    list-style: none;
+  }
+
+  &__body {
+    max-width: 25rem;
+    padding: 1.75rem;
+  }
+}
+
+.colorCurrent {
+    color: var(--color-accent-100);
+}
+
+.displayNone {
+  display: none;
+}
