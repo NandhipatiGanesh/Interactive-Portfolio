@@ -308,7 +308,7 @@ export function HeadingPreview({ title, subtitle }: contentData) {
               {title}{" "}
               <HoverLink
                 previewKey="Website"
-                onHoverStart={handleHoverStart}
+                
                 onHoverMove={handleHoverMove}
                 onHoverEnd={handleHoverEnd}
               >
