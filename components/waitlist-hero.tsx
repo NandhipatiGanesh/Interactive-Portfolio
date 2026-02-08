@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import type { FormEvent } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 interface Particle {
   x: number;
@@ -18,18 +19,70 @@ export const WaitlistHero = () => {
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) return;
 
     setStatus("loading");
 
-    // Simulate API delay
-    setTimeout(() => {
-      setStatus("success");
-      setEmail("");
-      fireConfetti();
-    }, 1500);
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          source_url: typeof window !== "undefined" ? window.location.href : "",
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus("success");
+        setEmail("");
+        fireConfetti();
+        toast.success(data.message || "Successfully subscribed to newsletter!", {
+          duration: 4000,
+          style: {
+            background: "#C9FD74",
+            color: "#fff",
+            fontWeight: "600",
+          },
+          iconTheme: {
+            primary: "#fff",
+            secondary: "#10b981",
+          },
+        });
+        
+        // Reset to idle after 3 seconds
+        setTimeout(() => {
+          setStatus("idle");
+        }, 3000);
+      } else {
+        setStatus("idle");
+        toast.error(data.error || "Failed to subscribe. Please try again.", {
+          duration: 4000,
+          style: {
+            background: "#ef4444",
+            color: "#fff",
+            fontWeight: "600",
+          },
+        });
+      }
+    } catch (error) {
+      console.error("Newsletter signup error:", error);
+      setStatus("idle");
+      toast.error("Something went wrong. Please try again later.", {
+        duration: 4000,
+        style: {
+          background: "#ef4444",
+          color: "#fff",
+          fontWeight: "600",
+        },
+      });
+    }
   };
 
   // --- Confetti Logic ---
@@ -41,7 +94,7 @@ export const WaitlistHero = () => {
     if (!ctx) return;
 
     const particles: Particle[] = [];
-    const colors = ["#0079da", "#10b981", "#fbbf24", "#f472b6", "#fff"];
+    const colors = ["#C9FD74", "#C9FD74", "#C9FD74", "#C9FD74", "#C9FD74"];
 
     // Resize canvas to cover the button area mostly
     canvas.width = canvas.offsetWidth;
@@ -102,7 +155,7 @@ export const WaitlistHero = () => {
     textMain: "#ffffff",
     textSecondary: "#94a3b8",
     bluePrimary: "#0079da",
-    success: "#10b981", // emerald-500
+    success: "#C9FD74", // emerald-500
     inputBg: "#27272a",
     baseBg: "#09090b",
     inputShadow: "rgba(255, 255, 255, 0.1)",
@@ -110,6 +163,9 @@ export const WaitlistHero = () => {
 
   return (
     <div className="w-full min-h-screen bg-black flex items-center justify-center z-300 relative">
+      {/* Toast Notifications */}
+      <Toaster position="top-center" reverseOrder={false} />
+      
       {/* Animation Styles */}
       <style>{`
         @keyframes spin-slow {
