@@ -2,12 +2,17 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 
 export default function BigHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Home (the redesign) is a self-contained, full-screen layout with no global chrome.
+  if (pathname === "/" || pathname?.startsWith("/redesign")) return null;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-300 p-6">

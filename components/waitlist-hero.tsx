@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import type { FormEvent } from "react";
+import { usePathname } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 
 interface Particle {
@@ -18,6 +19,10 @@ export const WaitlistHero = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const pathname = usePathname();
+
+  // Hidden on the self-contained home (redesign).
+  if (pathname === "/" || pathname?.startsWith("/redesign")) return null;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
