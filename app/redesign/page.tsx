@@ -12,7 +12,33 @@ import Services from "@/components/redesignfolder/services";
 const EASE = [0.22, 1, 0.36, 1] as const;
 const PHOTO_SRC = "/striped_tshirthandsclosepose-removebg-preview.png";
 
+const DASHBOARD_IMAGES = [
+  "/dashboard-template.webp",
+  "/chatbot.png",
+  "/dashboards/docs.png",
+];
+
+const MOBILE_APP_FILES = [
+  "WhatsApp Image 2026-06-08 at 4.25.07 AM.jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.07 AM (1).jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.07 AM (2).jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.07 AM (3).jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.07 AM (4).jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.07 AM (5).jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.08 AM.jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.08 AM (1).jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.08 AM (2).jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.08 AM (3).jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.08 AM (4).jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.09 AM.jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.10 AM.jpeg",
+  "WhatsApp Image 2026-06-08 at 4.25.10 AM (1).jpeg",
+  "WhatsApp Video 2026-06-08 at 4.25.26 AM.mp4",
+  "WhatsApp Video 2026-06-08 at 4.25.30 AM.mp4",
+];
+
 const MOBILE_IMAGES = [
+  ...MOBILE_APP_FILES.map((f) => `/mobile-apps/${encodeURI(f)}`),
   "/mobileviewimages/landingpraanavaidya.png",
   "/mobileviewimages/luxhospitals.png",
   "/mobileviewimages/gutcaremobileview.png",
@@ -27,7 +53,61 @@ const MOBILE_IMAGES = [
   "/mobileviewimages/footermobile.png",
 ];
 
+const VIDEO_EXTENSIONS = [".mp4", ".webm", ".mov"];
+const isVideo = (src: string) =>
+  VIDEO_EXTENSIONS.some((ext) => src.toLowerCase().includes(ext));
+
 const WEBSITE_IMAGES = [
+  "/mysterybox/hero.png",
+  "/mysterybox/second.png",
+  "/mysterybox/third.png",
+  "/mysterybox/fourth.png",
+  "/mysterybox/fifth.png",
+  "/mysterybox/sixth.png",
+  "/mysterybox/seventh.png",
+  "/mysterybox/eight.png",
+  "/mysterybox/nine.png",
+  "/mysterybox/10th.png",
+  "/worklance/home-hero.png",
+  "/worklance/singin.png",
+  "/worklance/otppage.png",
+  "/worklance/dashboardjobs.png",
+  "/worklance/single-job.png",
+  "/worklance/pricingpage.png",
+  "/worklance/payment-page.png",
+  "/pathlete/hero.png",
+  "/pathlete/second.png",
+  "/pathlete/third.png",
+  "/pathlete/fourth.png",
+  "/pathlete/fifth-contact.png",
+  "/healthcare-landing/hero-section.png",
+  "/healthcare-landing/second-section.png",
+  "/healthcare-landing/third-section.png",
+  "/healthcare-landing/Fourth-section.png",
+  "/healthcare-landing/fifth-section.png",
+  "/healthcare-landing/sixth-section.png",
+  "/healthcare-landing/seventh-section.png",
+  "/healthcare-landing/eigth-section.png",
+  "/healthcare-landing/ninth-section.png",
+  "/healthcare-landing/10th-section.png",
+  "/health/Screenshot%202026-02-23%20165010.png",
+  "/elementor-templates/hero-section.png",
+  "/elementor-templates/why-choose.png",
+  "/elementor-templates/trust.png",
+  "/elementor-templates/belive.png",
+  "/landscape/hero.png",
+  "/landscape/second.png",
+  "/landscape/third.png",
+  "/landscape/fourth.png",
+  "/landscape/fifth.png",
+  "/landscape/sixth.png",
+  "/landscape/seventh.png",
+  "/landscape/eight.png",
+  "/landscape/nine.png",
+  "/landscape/10th.png",
+  "/landscape/eleven.png",
+  "/landscape/poup.png",
+  "/landscape/image.png",
   "/websiteshoverimage.png",
   "/webImages/luxhospitalsdesktop.png",
   "/webImages/Gutcare.png",
@@ -44,6 +124,10 @@ const WEBSITE_IMAGES = [
   "/webImages/luxhospitals.png",
   "/webImages/footer.png",
   "/webImages/image.png",
+  "/hero.png",
+  "/rondom.png",
+  "/footers.png",
+  "/random-hero.png",
 ];
 
 /* ------------------------------------------------------------------ */
@@ -51,9 +135,9 @@ const WEBSITE_IMAGES = [
 /* ------------------------------------------------------------------ */
 const PROFILE = {
   name: "Ganesh Kumar",
-  title: "Frontend Developer.",
+  title: "Frontend & React Native Developer.",
   tagline: "Crafting polished websites, dashboards, and mobile apps.",
-  more: "Focused on motion, interaction, and the small details that make interfaces feel alive — built with Next.js, GSAP, Framer Motion, and React Native. Open to freelance and full-time work.",
+  more: "4 years of experience shipping web and mobile products, with 3 years leading frontend teams. Built with React.js, Next.js, React Native, WordPress, TypeScript, GSAP, and Framer Motion. Currently in the UK and open to freelance or full-time work.",
   tabs: [
     { key: "websites", label: "Websites" },
     { key: "dashboards", label: "Dashboards" },
@@ -212,12 +296,21 @@ export default function RedesignPage() {
                       </div>
                     )}
                     {activeTab === "dashboards" && (
-                      /* eslint-disable-next-line @next/next/no-img-element */
-                      <img
-                        src="/dashboard-template.webp"
-                        alt="Dashboard project"
-                        className="h-auto w-full"
-                      />
+                      <div className="flex h-screen overflow-y-auto mt-16 flex-col gap-5 pr-2 hide-scrollbar">
+                        {DASHBOARD_IMAGES.map((src, i) => (
+                          <div
+                            key={src}
+                            className="glass-bg rounded-3xl p-3 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.25)] sm:p-4"
+                          >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={src}
+                              alt={`Dashboard project ${i + 1}`}
+                              className="h-auto w-full rounded-2xl"
+                            />
+                          </div>
+                        ))}
+                      </div>
                     )}
                     {activeTab === "mobile-apps" && (
                       <div className="flex h-screen overflow-y-auto mt-16 flex-col items-center gap-5 pr-2 hide-scrollbar">
@@ -226,12 +319,22 @@ export default function RedesignPage() {
                             key={src}
                             className="glass-bg w-full max-w-[340px] rounded-3xl p-3 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.25)] sm:p-4"
                           >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                              src={src}
-                              alt={`Mobile app project ${i + 1}`}
-                              className="h-auto w-full rounded-2xl"
-                            />
+                            {isVideo(src) ? (
+                              <video
+                                src={src}
+                                className="h-auto w-full rounded-2xl"
+                                controls
+                                playsInline
+                                preload="metadata"
+                              />
+                            ) : (
+                              /* eslint-disable-next-line @next/next/no-img-element */
+                              <img
+                                src={src}
+                                alt={`Mobile app project ${i + 1}`}
+                                className="h-auto w-full rounded-2xl"
+                              />
+                            )}
                           </div>
                         ))}
                       </div>

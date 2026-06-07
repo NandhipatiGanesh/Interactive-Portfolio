@@ -14,9 +14,8 @@ const THEMES: { key: Theme; Icon: typeof Monitor; label: string }[] = [
 ];
 
 const SOCIAL = [
-  { label: "Email", href: "mailto:hello@ganeshkumar.dev" },
-  { label: "Twitter", href: "https://twitter.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "Email", href: "mailto:nandhipatiganeshkumar16@gmail.com" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/ganesh-nandhipati" },
 ];
 
 export default function RedesignFooter() {
