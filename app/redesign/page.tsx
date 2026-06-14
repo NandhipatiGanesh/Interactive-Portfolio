@@ -8,6 +8,7 @@ import RedesignFooter from "@/components/redesignfolder/redesignfooter";
 import FloatingNav from "@/components/redesignfolder/floatingnav";
 import WorkExperience from "@/components/redesignfolder/workexperience";
 import Services from "@/components/redesignfolder/services";
+import Contact from "@/components/redesignfolder/contact";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const PHOTO_SRC = "/striped_tshirthandsclosepose-removebg-preview.png";
@@ -58,6 +59,8 @@ const isVideo = (src: string) =>
   VIDEO_EXTENSIONS.some((ext) => src.toLowerCase().includes(ext));
 
 const WEBSITE_IMAGES = [
+  "/webImages/Crypto Elementor Template Design One.png",
+  "/webImages/Crypto Elementor Template Design Two.png",
   "/mysterybox/hero.png",
   "/mysterybox/second.png",
   "/mysterybox/third.png",
@@ -144,6 +147,7 @@ const PROFILE = {
     { key: "mobile-apps", label: "Mobile Apps" },
     { key: "experience", label: "Experience" },
     { key: "services", label: "Services" },
+    { key: "contact", label: "Contact" },
   ] as const,
   social: [
     { label: "Email", href: "mailto:hello@ganeshkumar.dev" },
@@ -341,6 +345,7 @@ export default function RedesignPage() {
                     )}
                     {activeTab === "experience" && <WorkExperience />}
                     {activeTab === "services" && <Services />}
+                    {activeTab === "contact" && <Contact />}
                   </motion.div>
                 </AnimatePresence>
               </motion.div>
