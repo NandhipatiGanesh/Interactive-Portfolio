@@ -21,8 +21,8 @@ const NAV_ITEMS: {
   dividerAfter?: boolean;
 }[] = [
   { key: "home", Icon: Home, href: "/", label: "Home", dividerAfter: true },
-  { key: "x", Icon: XIcon, href: "https://x.com", label: "X" },
-  { key: "linkedin", Icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { key: "x", Icon: XIcon, href: "https://x.com/Webby_io", label: "X" },
+  { key: "linkedin", Icon: Linkedin, href: "https://www.linkedin.com/in/ganesh-nandhipati/", label: "LinkedIn" },
   { key: "ui-tool", Icon: LayoutGrid, href: "https://your-templates-site.com", label: "UI Tool" },
 ];
 
