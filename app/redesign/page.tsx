@@ -61,6 +61,7 @@ const isVideo = (src: string) =>
 const WEBSITE_IMAGES = [
   "/webImages/Crypto Elementor Template Design One.png",
   "/webImages/Crypto Elementor Template Design Two.png",
+
   "/mysterybox/hero.png",
   "/mysterybox/second.png",
   "/mysterybox/third.png",
@@ -131,6 +132,10 @@ const WEBSITE_IMAGES = [
   "/rondom.png",
   "/footers.png",
   "/random-hero.png",
+  "https://laatui.com/_next/image?url=https%3A%2F%2Fwebcomponents.blog%2Fwp-content%2Fuploads%2F2025%2F07%2FScreenshot-2025-07-14-215853.webp&w=640&q=75",
+  "https://laatui.com/_next/image?url=https%3A%2F%2Fwebcomponents.blog%2Fwp-content%2Fuploads%2F2025%2F06%2FResponsive-Chatbot-window-with-clean-uiux-big-Poster.webp&w=640&q=75",
+  "https://laatui.com/_next/image?url=https%3A%2F%2Fwebcomponents.blog%2Fwp-content%2Fuploads%2F2025%2F06%2FScreenshot-2025-06-15-213134.webp&w=640&q=75",
+  "https://laatui.com/_next/image?url=https%3A%2F%2Fwebcomponents.blog%2Fwp-content%2Fuploads%2F2025%2F06%2FScreenshot-2025-06-12-220344.webp&w=640&q=75",
 ];
 
 /* ------------------------------------------------------------------ */
