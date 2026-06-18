@@ -3,7 +3,7 @@
 
 import { Fragment, useState } from "react";
 import { motion } from "framer-motion";
-import { FileText, Home, Instagram } from "lucide-react";
+import { FileText, Home, Linkedin, LayoutGrid } from "lucide-react";
 
 function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -22,8 +22,8 @@ const NAV_ITEMS: {
 }[] = [
   { key: "home", Icon: Home, href: "/", label: "Home", dividerAfter: true },
   { key: "x", Icon: XIcon, href: "https://x.com", label: "X" },
-  { key: "instagram", Icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { key: "blog", Icon: FileText, href: "/blog", label: "Blog", dividerAfter: true },
+  { key: "linkedin", Icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { key: "ui-tool", Icon: LayoutGrid, href: "https://your-templates-site.com", label: "UI Tool" },
 ];
 
 export default function FloatingNav() {
@@ -50,6 +50,15 @@ export default function FloatingNav() {
                 />
               )}
               <item.Icon className="relative size-[18px]" />
+              {hovered === item.key && (
+                <motion.span
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="pointer-events-none absolute top-full left-1/2 mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-neutral-900 px-2 py-1 text-xs font-medium text-white shadow-md dark:bg-white dark:text-neutral-900"
+                >
+                  {item.label}
+                </motion.span>
+              )}
             </a>
             {item.dividerAfter && (
               <span className="mx-1.5 h-6 w-px bg-neutral-300 dark:bg-white/15" />
