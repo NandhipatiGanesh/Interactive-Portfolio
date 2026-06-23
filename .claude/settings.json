@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Bash(npx --yes skills add https://github.com/Leonxlnx/taste-skill)",
+      "Bash(ls -la .claude/; echo \"=== skills ===\"; ls -la .claude/skills/ 2>&1; echo \"=== home agents ===\"; ls -la ~/.agents/skills/ 2>&1 | head; echo \"=== find taste anywhere under home \\(shallow\\) ===\"; ls -d ~/.claude/skills/*taste* ~/.agents/skills/*taste* 2>/dev/null)",
+      "Read(//c/Users/ganes/.agents/**)",
+      "Read(//c/Users/ganes/.claude/**)",
+      "Bash(find ~ -maxdepth 6 -type d -iname \"*taste*\" 2>/dev/null | grep -v node_modules | head; echo \"=== skills cli config ===\"; cat ~/.config/skills/* 2>/dev/null | head; find ~ -maxdepth 4 -type d -name \".agents\" 2>/dev/null | head)",
+      "Read(//c/Users/ganes/**)",
+      "Read(//c/Users/ganes/.config/**)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(gh api *)"
+    ]
+  }
+}

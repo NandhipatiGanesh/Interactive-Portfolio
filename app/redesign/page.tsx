@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import RedesignFooter from "@/components/redesignfolder/redesignfooter";
 import FloatingNav from "@/components/redesignfolder/floatingnav";
@@ -258,7 +258,22 @@ export default function RedesignPage() {
                         : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100",
                     )}
                   >
-                    {t.label}
+                    <span className="flex items-center justify-between gap-2">
+                      {t.label}
+                      <AnimatePresence initial={false}>
+                        {activeTab === t.key && (
+                          <motion.span
+                            initial={{ opacity: 0, x: -16, width: 0 }}
+                            animate={{ opacity: 1, x: 0, width: "auto" }}
+                            exit={{ opacity: 0, x: 16, width: 0 }}
+                            transition={{ duration: 0.4, ease: EASE }}
+                            className="flex shrink-0 items-center overflow-hidden"
+                          >
+                            <ArrowRight className="size-4" />
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+                    </span>
                   </button>
                 ))}
               </motion.nav>

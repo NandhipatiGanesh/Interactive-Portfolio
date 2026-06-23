@@ -14,6 +14,7 @@ import { InsightsSection } from "@/components/insights-section"
 import { ManifestoSection } from "@/components/menifesto-section"
 import {ShowcaseSection } from "@/components/showcase"
 import {CarouselSection} from "@/components/carousel-section"
+import {WorkCarousel} from "@/components/work-carousel"
 export default function PortfolioPage({
   isActiveProp,
 }: {
@@ -88,6 +89,7 @@ export default function PortfolioPage({
       <PricingSection />
       <FeaturesSection />
       <CarouselSection />
+      <WorkCarousel />
       </main>
       </LenisProvider>
   
