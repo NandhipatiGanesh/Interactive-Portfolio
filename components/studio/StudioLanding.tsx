@@ -68,7 +68,7 @@ export function StudioLanding() {
             every project, backed by a veteran design crew that moves fast
             without cutting corners.
           </p>
-          <p>Projects start at $5,000 per month.</p>
+          <p>Projects start at $1,000 per month.</p>
         </div>
         <div
           className={`mt-5 flex flex-col gap-3 sm:flex-row md:mt-6 md:gap-4 ${anim("0.5s")}`}
