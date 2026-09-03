@@ -89,7 +89,7 @@ export default function PortfolioPage({
       <PricingSection />
       <FeaturesSection />
       <CarouselSection />
-      <WorkCarousel />
+      {/* <WorkCarousel /> */}
       </main>
       </LenisProvider>
   

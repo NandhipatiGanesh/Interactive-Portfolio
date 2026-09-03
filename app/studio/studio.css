@@ -1,0 +1,64 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes trailFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+
+.studio-landing .animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.studio-landing .animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .studio-landing .animate-marquee {
+    animation-duration: 10s;
+  }
+}
+
+.studio-landing .font-serif-accent {
+  font-family: "Capricho Light", "HeadingFont", Georgia, serif;
+}
+
+.studio-landing {
+  font-family: "Circular", system-ui, -apple-system, sans-serif;
+}
+
+.studio-landing button,
+.studio-landing a {
+  font-family: "Circular", system-ui, -apple-system, sans-serif;
+}
+
+.studio-landing h1,
+.studio-landing h2,
+.studio-landing h3 {
+  font-family: inherit;
+}
