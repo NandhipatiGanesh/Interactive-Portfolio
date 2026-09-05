@@ -9,134 +9,15 @@ import FloatingNav from "@/components/redesignfolder/floatingnav";
 import WorkExperience from "@/components/redesignfolder/workexperience";
 import Services from "@/components/redesignfolder/services";
 import Contact from "@/components/redesignfolder/contact";
+import {
+  DASHBOARD_IMAGES,
+  MOBILE_IMAGES,
+  WEBSITE_IMAGES,
+  isVideo,
+} from "@/lib/portfolio-images";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const PHOTO_SRC = "/striped_tshirthandsclosepose-removebg-preview.png";
-
-const DASHBOARD_IMAGES = [
-  "/dashboard-template.webp",
-  "/chatbot.png",
-  "/dashboards/docs.png",
-];
-
-const MOBILE_APP_FILES = [
-  "WhatsApp Image 2026-06-08 at 4.25.07 AM.jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.07 AM (1).jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.07 AM (2).jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.07 AM (3).jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.07 AM (4).jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.07 AM (5).jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.08 AM.jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.08 AM (1).jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.08 AM (2).jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.08 AM (3).jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.08 AM (4).jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.09 AM.jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.10 AM.jpeg",
-  "WhatsApp Image 2026-06-08 at 4.25.10 AM (1).jpeg",
-  "WhatsApp Video 2026-06-08 at 4.25.26 AM.mp4",
-  "WhatsApp Video 2026-06-08 at 4.25.30 AM.mp4",
-];
-
-const MOBILE_IMAGES = [
-  ...MOBILE_APP_FILES.map((f) => `/mobile-apps/${encodeURI(f)}`),
-  "/mobileviewimages/landingpraanavaidya.png",
-  "/mobileviewimages/luxhospitals.png",
-  "/mobileviewimages/gutcaremobileview.png",
-  "/mobileviewimages/advaithealthmobile.png",
-  "/mobileviewimages/chiragmobile.png",
-  "/mobileviewimages/cryptositemobileOne.png",
-  "/mobileviewimages/cryptositemobiletwo.png",
-  "/mobileviewimages/praanavaidyamobileview.png",
-  "/mobileviewimages/revviewsmobile.png",
-  "/mobileviewimages/webcomponents.png",
-  "/mobileviewimages/somediscussions.png",
-  "/mobileviewimages/footermobile.png",
-];
-
-const VIDEO_EXTENSIONS = [".mp4", ".webm", ".mov"];
-const isVideo = (src: string) =>
-  VIDEO_EXTENSIONS.some((ext) => src.toLowerCase().includes(ext));
-
-const WEBSITE_IMAGES = [
-  "/webImages/Crypto Elementor Template Design One.png",
-  "/webImages/Crypto Elementor Template Design Two.png",
-
-  "/mysterybox/hero.png",
-  "/mysterybox/second.png",
-  "/mysterybox/third.png",
-  "/mysterybox/fourth.png",
-  "/mysterybox/fifth.png",
-  "/mysterybox/sixth.png",
-  "/mysterybox/seventh.png",
-  "/mysterybox/eight.png",
-  "/mysterybox/nine.png",
-  "/mysterybox/10th.png",
-  "/worklance/home-hero.png",
-  "/worklance/singin.png",
-  "/worklance/otppage.png",
-  "/worklance/dashboardjobs.png",
-  "/worklance/single-job.png",
-  "/worklance/pricingpage.png",
-  "/worklance/payment-page.png",
-  "/pathlete/hero.png",
-  "/pathlete/second.png",
-  "/pathlete/third.png",
-  "/pathlete/fourth.png",
-  "/pathlete/fifth-contact.png",
-  "/healthcare-landing/hero-section.png",
-  "/healthcare-landing/second-section.png",
-  "/healthcare-landing/third-section.png",
-  "/healthcare-landing/Fourth-section.png",
-  "/healthcare-landing/fifth-section.png",
-  "/healthcare-landing/sixth-section.png",
-  "/healthcare-landing/seventh-section.png",
-  "/healthcare-landing/eigth-section.png",
-  "/healthcare-landing/ninth-section.png",
-  "/healthcare-landing/10th-section.png",
-  "/health/Screenshot%202026-02-23%20165010.png",
-  "/elementor-templates/hero-section.png",
-  "/elementor-templates/why-choose.png",
-  "/elementor-templates/trust.png",
-  "/elementor-templates/belive.png",
-  "/landscape/hero.png",
-  "/landscape/second.png",
-  "/landscape/third.png",
-  "/landscape/fourth.png",
-  "/landscape/fifth.png",
-  "/landscape/sixth.png",
-  "/landscape/seventh.png",
-  "/landscape/eight.png",
-  "/landscape/nine.png",
-  "/landscape/10th.png",
-  "/landscape/eleven.png",
-  "/landscape/poup.png",
-  "/landscape/image.png",
-  "/websiteshoverimage.png",
-  "/webImages/luxhospitalsdesktop.png",
-  "/webImages/Gutcare.png",
-  "/webImages/avira.png",
-  "/webImages/bluehero.png",
-  "/webImages/chiraglandingpage.png",
-  "/webImages/cryptositeOne.png",
-  "/webImages/CRYPTOSITETWO.png",
-  "/webImages/healthadvait.png",
-  "/webImages/praanavaidya.png",
-  "/webImages/praanavaidyalanding.png",
-  "/webImages/reviewfeedback.png",
-  "/webImages/webcomponentsdesktop.png",
-  "/webImages/luxhospitals.png",
-  "/webImages/footer.png",
-  "/webImages/image.png",
-  "/hero.png",
-  "/rondom.png",
-  "/footers.png",
-  "/random-hero.png",
-  "https://laatui.com/_next/image?url=https%3A%2F%2Fwebcomponents.blog%2Fwp-content%2Fuploads%2F2025%2F07%2FScreenshot-2025-07-14-215853.webp&w=640&q=75",
-  "https://laatui.com/_next/image?url=https%3A%2F%2Fwebcomponents.blog%2Fwp-content%2Fuploads%2F2025%2F06%2FResponsive-Chatbot-window-with-clean-uiux-big-Poster.webp&w=640&q=75",
-  "https://laatui.com/_next/image?url=https%3A%2F%2Fwebcomponents.blog%2Fwp-content%2Fuploads%2F2025%2F06%2FScreenshot-2025-06-15-213134.webp&w=640&q=75",
-  "https://laatui.com/_next/image?url=https%3A%2F%2Fwebcomponents.blog%2Fwp-content%2Fuploads%2F2025%2F06%2FScreenshot-2025-06-12-220344.webp&w=640&q=75",
-];
 
 /* ------------------------------------------------------------------ */
 /*  Edit your details here                                            */

@@ -1,12 +1,23 @@
+import {
+  DASHBOARD_IMAGES,
+  MOBILE_IMAGES,
+  WEBSITE_IMAGES,
+} from "@/lib/portfolio-images";
+
+// Landscape screenshots that read well at marquee height.
 export const MARQUEE_IMAGES = [
-  "https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif",
-  "https://motionsites.ai/assets/hero-portfolio-cosmic-preview-BpvWJ3Nc.gif",
-  "https://motionsites.ai/assets/hero-velorah-preview-CJNTtbpd.gif",
-  "https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif",
-  "https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif",
-  "https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif",
-  "https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif",
-  "https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif",
+  "/webImages/luxhospitalsdesktop.png",
+  "/landscape/hero.png",
+  "/webImages/praanavaidyalanding.png",
+  "/mysterybox/hero.png",
+  "/worklance/home-hero.png",
+  "/pathlete/hero.png",
+  "/healthcare-landing/hero-section.png",
+  "/webImages/cryptositeOne.png",
+  "/webImages/Gutcare.png",
+  "/dashboard-template.webp",
+  "/webImages/chiraglandingpage.png",
+  "/landscape/fourth.png",
 ];
 
 export const TESTIMONIALS = [
@@ -59,21 +70,23 @@ export const TESTIMONIALS = [
 
 export const PROJECTS = [
   {
-    name: "evr",
-    description: "From idea to millions raised for a web3 AI product",
-    image:
-      "https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif",
+    name: "Websites",
+    description:
+      "Marketing sites, landing pages and full builds shipped with Next.js, WordPress and Elementor.",
+    images: WEBSITE_IMAGES,
+    variant: "wide" as const,
   },
   {
-    name: "Automation Machines",
-    description: "Streamlining industrial automation processes",
-    image:
-      "https://motionsites.ai/assets/hero-automation-machines-preview-DlTveRIN.gif",
+    name: "Dashboards",
+    description: "Data-dense product interfaces, admin panels and chat tooling.",
+    images: DASHBOARD_IMAGES,
+    variant: "wide" as const,
   },
   {
-    name: "xPortfolio",
-    description: "Modern portfolio management platform",
-    image: "https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif",
+    name: "Mobile Apps",
+    description: "React Native screens and responsive mobile views.",
+    images: MOBILE_IMAGES,
+    variant: "phone" as const,
   },
 ];
 

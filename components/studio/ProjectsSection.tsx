@@ -1,16 +1,45 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { isVideo } from "@/lib/portfolio-images";
 import { PROJECTS } from "./constants";
+
+type Variant = "wide" | "phone";
+
+function Media({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className: string;
+}) {
+  if (isVideo(src)) {
+    return (
+      <video
+        src={src}
+        className={className}
+        controls
+        playsInline
+        preload="metadata"
+      />
+    );
+  }
+
+  return <img src={src} alt={alt} loading="lazy" className={className} />;
+}
 
 function ProjectItem({
   name,
   description,
-  image,
+  images,
+  variant,
 }: {
   name: string;
   description: string;
-  image: string;
+  images: string[];
+  variant: Variant;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
@@ -34,10 +63,7 @@ function ProjectItem({
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className={isInView ? "animate-fade-in-up" : "opacity-0"}
-    >
+    <div ref={ref} className={isInView ? "animate-fade-in-up" : "opacity-0"}>
       <div className="ml-20 md:ml-28">
         <h3 className="font-serif-accent text-2xl font-semibold text-[#051A24] md:text-3xl">
           {name}
@@ -46,11 +72,27 @@ function ProjectItem({
           {description}
         </p>
       </div>
-      <img
-        src={image}
-        alt={name}
-        className="mt-6 w-full rounded-2xl object-cover shadow-lg"
-      />
+
+      {/* Horizontal, snapping rail — keeps a long screenshot set browsable
+          without turning the landing page into an endless scroll. */}
+      <div className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 hide-scrollbar">
+        {images.map((src, i) => (
+          <div
+            key={src}
+            className={
+              variant === "phone"
+                ? "h-[400px] w-[200px] shrink-0 snap-start md:h-[520px] md:w-[260px]"
+                : "h-[220px] w-[85vw] shrink-0 snap-start md:h-[400px] md:w-[680px]"
+            }
+          >
+            <Media
+              src={src}
+              alt={`${name} ${i + 1}`}
+              className="h-full w-full rounded-2xl object-cover object-top shadow-lg"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
