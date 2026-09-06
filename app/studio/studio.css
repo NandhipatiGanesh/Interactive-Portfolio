@@ -35,12 +35,12 @@
 }
 
 .studio-landing .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 @media (max-width: 768px) {
   .studio-landing .animate-marquee {
-    animation-duration: 10s;
+    animation-duration: 26s;
   }
 }
 
