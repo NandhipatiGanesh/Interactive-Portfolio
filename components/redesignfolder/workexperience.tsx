@@ -1,44 +1,21 @@
 "use client";
 // file is in components/redesignfolder/workexperience.tsx
 
-import { Briefcase, Sparkles, ShoppingBag } from "lucide-react";
+import { Briefcase, GraduationCap, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { EXPERIENCE } from "@/lib/experience";
 
 type Accent = "blue" | "dark" | "green";
 
-const EXPERIENCE: {
-  period: string;
-  role: string;
-  company: string;
-  href: string;
-  accent: Accent;
-  Icon: React.ComponentType<{ className?: string }>;
-}[] = [
-  {
-    period: "2026 — Present",
-    role: "Available in the",
-    company: "UK",
-    href: "#",
-    accent: "green",
-    Icon: Sparkles,
-  },
-  {
-    period: "Dec 2023 — Mar 2026",
-    role: "Frontend Developer (TL) at",
-    company: "Advait Tech",
-    href: "#",
-    accent: "blue",
-    Icon: Briefcase,
-  },
-  {
-    period: "May 2022 — Nov 2023",
-    role: "Frontend Dev Intern,",
-    company: "Remote",
-    href: "#",
-    accent: "dark",
-    Icon: ShoppingBag,
-  },
-];
+// Presentation only — keyed by company so it stays in step with lib/experience.
+const STYLES: Record<
+  string,
+  { accent: Accent; Icon: React.ComponentType<{ className?: string }> }
+> = {
+  UK: { accent: "green", Icon: GraduationCap },
+  "Advait Technology Labs": { accent: "blue", Icon: Briefcase },
+  Remote: { accent: "dark", Icon: ShoppingBag },
+};
 
 const ACCENT_CLASSES: Record<Accent, string> = {
   blue: "bg-blue-50 text-blue-600 ring-blue-100 dark:bg-blue-500/10 dark:text-blue-300 dark:ring-blue-400/20",
@@ -53,31 +30,46 @@ export default function WorkExperience() {
       <h2 className="text-3xl font-semibold tracking-tight">Work Experience</h2>
 
       <div className="mt-10 flex flex-col gap-7">
-        {EXPERIENCE.map((exp) => (
-          <div
-            key={exp.period}
-            className="grid grid-cols-[110px_1fr_auto] items-center gap-4 sm:grid-cols-[160px_1fr_auto] sm:gap-8"
-          >
-            <span className="text-xs text-neutral-400 sm:text-sm dark:text-neutral-500">
-              {exp.period}
-            </span>
-            <span className="text-sm text-neutral-800 sm:text-base dark:text-neutral-200">
-              {exp.role}
-            </span>
-            <a
-              href={exp.href}
-              target={exp.href.startsWith("http") ? "_blank" : undefined}
-              rel="noreferrer"
-              className={cn(
-                "inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-sm font-medium ring-1 transition-transform hover:scale-[1.03]",
-                ACCENT_CLASSES[exp.accent],
+        {EXPERIENCE.map((exp) => {
+          const { accent, Icon } = STYLES[exp.company] ?? {
+            accent: "dark" as Accent,
+            Icon: Briefcase,
+          };
+
+          return (
+            <div key={exp.period} className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2 sm:grid sm:grid-cols-[160px_1fr_auto] sm:items-center sm:gap-8">
+                <span className="text-xs text-neutral-400 sm:text-sm dark:text-neutral-500">
+                  {exp.period}
+                </span>
+                <span className="text-sm text-neutral-800 sm:text-base dark:text-neutral-200">
+                  {exp.role}
+                </span>
+                <a
+                  href={exp.href}
+                  target={exp.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noreferrer"
+                  className={cn(
+                    "inline-flex w-fit items-center gap-1.5 rounded-xl px-3 py-1.5 text-sm font-medium ring-1 transition-transform hover:scale-[1.03]",
+                    ACCENT_CLASSES[accent],
+                  )}
+                >
+                  <Icon className="size-4" />
+                  {exp.company}
+                </a>
+              </div>
+
+              {/* Responsibilities — indented to line up with the role column. */}
+              {exp.points && (
+                <ul className="ml-5 flex list-disc flex-col gap-2 pr-2 text-sm leading-relaxed text-neutral-600 marker:text-neutral-300 sm:ml-[192px] dark:text-neutral-400 dark:marker:text-neutral-600">
+                  {exp.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
               )}
-            >
-              <exp.Icon className="size-4" />
-              {exp.company}
-            </a>
-          </div>
-        ))}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

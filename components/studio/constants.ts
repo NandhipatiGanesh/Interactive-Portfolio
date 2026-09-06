@@ -92,8 +92,5 @@ export const PROJECTS = [
 
 export const BOOK_URL = "https://ganeshnandhipati.com/book";
 
-export const PARALLAX_IMAGE =
-  "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260330_103804_7aa5494f-4d5b-432e-9dc7-20715275f143.png&w=1280&q=85";
-
 export const CTA_AVATAR =
   "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop";
