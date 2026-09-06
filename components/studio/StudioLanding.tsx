@@ -12,7 +12,7 @@ import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 import { LinkButton } from "./Button";
 import { BOOK_URL } from "./constants";
 import { Marquee } from "./Marquee";
-import { TestimonialSection } from "./TestimonialSection";
+import { ExperienceSection } from "./ExperienceSection";
 import { PricingSection } from "./PricingSection";
 import { TestimonialCarousel } from "./TestimonialCarousel";
 import { ProjectsSection } from "./ProjectsSection";
@@ -82,7 +82,7 @@ export function StudioLanding() {
       </section>
 
       <Marquee />
-      <TestimonialSection />
+      <ExperienceSection />
       <PricingSection />
       <TestimonialCarousel />
       <div id="work">
