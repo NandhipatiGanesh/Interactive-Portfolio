@@ -96,6 +96,15 @@ export const PROJECTS = [
   },
 ];
 
+export const CONTACT = {
+  email: "nandhipatiganeshkumar16@gmail.com",
+  phone: "+44 7344 760356",
+  phoneHref: "+447344760356",
+  linkedin: "https://linkedin.com/in/ganesh-nandhipati",
+  github: "https://github.com/NandhipatiGanesh",
+  location: "United Kingdom",
+};
+
 export const BOOK_URL = "https://ganeshnandhipati.com/book";
 
 export const CTA_AVATAR = "/profileimage.png";
