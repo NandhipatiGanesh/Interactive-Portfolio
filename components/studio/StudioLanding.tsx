@@ -32,7 +32,7 @@ export function StudioLanding() {
     <div className="studio-landing min-h-screen bg-white pb-24">
       <section
         ref={ref}
-        className="mx-auto max-w-[440px] px-6 pt-12 md:pt-16"
+        className="mx-auto max-w-[540px] px-6 pt-12 md:pt-8"
       >
         <p
           className={` mb-4 text-[32px] font-semibold tracking-tight text-[#051A24] md:text-[40px] lg:text-[44px] ${anim("0.1s")}`}
@@ -87,8 +87,12 @@ export function StudioLanding() {
       </section>
 
       <Marquee />
-      <ExperienceSection />
-      <PricingSection />
+      <div id="experience">
+        <ExperienceSection />
+      </div>
+      <div id="pricing">
+        <PricingSection />
+      </div>
       <TestimonialCarousel />
       <div id="work">
         <ProjectsSection />
