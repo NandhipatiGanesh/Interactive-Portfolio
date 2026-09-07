@@ -88,9 +88,6 @@ export function TestimonialCarousel() {
           {Array.from({ length: 5 }).map((_, i) => (
             <Star key={i} className="h-5 w-5 fill-black text-black" />
           ))}
-          <span className="ml-2 text-sm font-medium text-[#051A24]">
-            Clutch 5/5
-          </span>
         </div>
       </div>
 
@@ -122,7 +119,8 @@ export function TestimonialCarousel() {
                 <img
                   src={testimonial.avatar}
                   alt={testimonial.name}
-                  className="h-12 w-12 rounded-full object-cover"
+                  loading="lazy"
+                  className="h-12 w-12 shrink-0 rounded-full object-cover ring-1 ring-[#051A24]/10"
                 />
                 <div>
                   <p className="text-sm font-semibold text-[#051A24]">

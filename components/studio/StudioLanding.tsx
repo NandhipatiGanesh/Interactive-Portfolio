@@ -44,31 +44,36 @@ export function StudioLanding() {
           className={`mb-2 font-mono text-xs text-[#051A24] md:text-sm ${anim("0.2s")}`}
           style={{ animationDelay: "0.2s" }}
         >
-          Ganesh Kumar Frontend & React Native Developer.
+          Ganesh Kumar Nandhipati — Frontend & React Native Developer.
         </p>
         <h1
           className={`text-[32px] leading-[1.1] tracking-tight whitespace-nowrap text-[#0D212C] md:text-[40px] lg:text-[44px] ${anim("0.3s")}`}
           style={{ animationDelay: "0.3s" }}
         >
-          Build the <span className="font-serif-accent">next wave,</span>
+          Websites, <span className="font-serif-accent">apps</span> and
           <br />
-          the <span className="font-serif-accent">bold way.</span>
+          dashboards, <span className="font-serif-accent">done right.</span>
         </h1>
         <div
           className={`mt-5 flex flex-col gap-6 text-sm leading-relaxed text-[#051A24] md:mt-6 md:text-base ${anim("0.4s")}`}
           style={{ animationDelay: "0.4s" }}
         >
           <p>
-            I spent Four years in this field crafting products used by over a
-            billion people. I founded myself to bring that same level of
-            thinking to innovators shaping what comes next.
+            I am a web and mobile developer with four years of experience. I
+            build business websites, online stores, admin dashboards and mobile
+            apps for clients in healthcare, crypto and professional services.
           </p>
           <p>
-            The studio is deliberately small. I guide the creative vision on
-            every project, backed by a veteran design crew that moves fast
-            without cutting corners.
+            You work with me directly, not through an agency. I take care of the
+            whole project: working out what you need, designing the pages,
+            building them, launching the site, and looking after it afterwards
+            with SEO and analytics set up properly.
           </p>
-          <p>Projects start at $1,000 per month.</p>
+          <p>
+            I am based in the UK, studying an MSc in Artificial Intelligence,
+            and available for freelance projects or a full-time role.
+          </p>
+          <p>Projects start at £1,000 per month.</p>
         </div>
         <div
           className={`mt-5 flex flex-col gap-3 sm:flex-row md:mt-6 md:gap-4 ${anim("0.5s")}`}

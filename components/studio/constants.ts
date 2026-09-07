@@ -6,65 +6,71 @@ import {
 
 // Landscape screenshots that read well at marquee height.
 export const MARQUEE_IMAGES = [
-  "/webImages/luxhospitalsdesktop.png",
+  // "/webImages/luxhospitalsdesktop.png",
   "/landscape/hero.png",
-  "/webImages/praanavaidyalanding.png",
+  // "/webImages/praanavaidyalanding.png",
   "/mysterybox/hero.png",
   "/worklance/home-hero.png",
   "/pathlete/hero.png",
-  "/healthcare-landing/hero-section.png",
+  // "/healthcare-landing/hero-section.png",
   "/webImages/cryptositeOne.png",
-  "/webImages/Gutcare.png",
+  // "/webImages/Gutcare.png",
   "/dashboard-template.webp",
-  "/webImages/chiraglandingpage.png",
+  // "/webImages/chiraglandingpage.png",
   "/landscape/fourth.png",
 ];
 
+// PLACEHOLDER testimonials. The projects and companies are real, but the
+// people, their portraits and their words are invented — replace with real
+// client quotes (and get sign-off) before this goes anywhere public.
 export const TESTIMONIALS = [
   {
-    name: "Marcus Anderson",
-    role: "CEO",
-    company: "Data.storage",
+    name: "Rajesh",
+    role: "Director",
+    company: "LUX Hospitals",
     quote:
-      "With very little guidance team delivered designs that were consistently spot on. Every iteration felt intentional and aligned with our vision.",
-    avatar:
-      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      "Our site had to feel calm and be simple for patients to navigate. Ganesh built the desktop and mobile layouts, and pages now open quickly even on a weak connection.",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    name: "alexwu",
+    name: "Chethan",
     role: "Founder",
-    company: "Nexgate",
+    company: "Praanavaidya",
     quote:
-      "Viktor led the creation of our best fundraising deck to date! The storytelling and visual polish helped us close our Series A.",
-    avatar:
-      "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      "He took our wellness brand from a rough brief to a finished site, desktop and mobile, and set up analytics so we can see which pages people actually read.",
+    avatar: "https://randomuser.me/api/portraits/men/22.jpg",
   },
   {
-    name: "James Mitchell",
-    role: "VP Product",
-    company: "LaunchPad",
+    name: "Rahul Nair",
+    role: "Product Manager",
+    company: "Worklance",
     quote:
-      "Working with Viktor transformed our product vision. The design system he built scaled beautifully across our entire platform.",
-    avatar:
-      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      "Ganesh built the whole flow with us: sign-in, OTP, the jobs dashboard, pricing and payments. It is pleasant to use, and support barely gets questions about it.",
+    avatar: "https://randomuser.me/api/portraits/men/75.jpg",
   },
   {
-    name: "Rachel Foster",
+    name: "Dr. Yuvaraj",
+    role: "Clinical Lead",
+    company: "GutCare",
+    quote:
+      "Steady progress every single week and no chasing needed. The booking pages and the mobile views came back exactly as we had described them.",
+    avatar: "https://randomuser.me/api/portraits/men/56.jpg",
+  },
+  {
+    name: "James Whitfield",
     role: "Co-founder",
-    company: "Nexus Labs",
+    company: "Pathlete",
     quote:
-      "The design quality exceeded our expectations. Every detail was considered, from micro-interactions to the overall brand narrative.",
-    avatar:
-      "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      "We wanted a landing page that felt premium and we wanted it quickly. He turned the design and the build around fast, and it has held up ever since.",
+    avatar: "https://randomuser.me/api/portraits/men/46.jpg",
   },
   {
-    name: "David Zhang",
-    role: "Head of Design",
-    company: "Paradigm Labs",
+    name: "Jeff",
+    role: "Editor",
+    company: "WebComponents",
     quote:
-      "Incredible work from start to finish. Viktor brings a rare combination of strategic thinking and exceptional craft to every project.",
-    avatar:
-      "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
+      "He rebuilt our theme and cleared out performance problems we had lived with for a year. Our page speed scores went from red to green.",
+    avatar: "https://randomuser.me/api/portraits/men/12.jpg",
   },
 ];
 
@@ -92,5 +98,4 @@ export const PROJECTS = [
 
 export const BOOK_URL = "https://ganeshnandhipati.com/book";
 
-export const CTA_AVATAR =
-  "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop";
+export const CTA_AVATAR = "/profileimage.png";
