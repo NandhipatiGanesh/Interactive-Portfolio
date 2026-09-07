@@ -33,7 +33,7 @@ export const EXPERIENCE: Role[] = [
     ],
   },
   {
-    period: "May 2022 — 2026",
+    period: "May 2022 — 2023",
     role: "Freelance Web & Mobile Developer,",
     company: "Remote",
     href: "#",

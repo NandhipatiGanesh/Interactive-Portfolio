@@ -100,10 +100,10 @@ export function PartnerSection() {
         >
           <img
             src={CTA_AVATAR}
-            alt="Viktor"
+            alt="Ganesh"
             className="h-10 w-10 rounded-full object-cover"
           />
-          Start chat with Viktor
+          Start a chat with Ganesh
         </LinkButton>
       </div>
     </section>
