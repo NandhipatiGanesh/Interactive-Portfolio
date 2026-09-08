@@ -82,7 +82,7 @@ function ProjectItem({
             key={src}
             className={
               variant === "phone"
-                ? "h-[400px] w-[200px] shrink-0 snap-start md:h-[520px] md:w-[260px]"
+                ? "h-[400px] w-[200px] shrink-0 snap-start md:h-[560px] md:w-[260px]"
                 : "h-[220px] w-[90vw] shrink-0 snap-start md:h-[420px] md:w-[800px]"
             }
           >
