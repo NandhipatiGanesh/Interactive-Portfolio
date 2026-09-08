@@ -64,31 +64,36 @@ function ProjectItem({
 
   return (
     <div ref={ref} className={isInView ? "animate-fade-in-up" : "opacity-0"}>
-      <div className="ml-20 md:ml-28">
-        <h3 className="font-serif-accent text-2xl font-semibold text-[#051A24] md:text-3xl">
-          {name}
-        </h3>
-        <p className="mt-2 text-sm text-[#051A24]/70 md:text-base">
-          {description}
-        </p>
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div className="ml-20 md:ml-28">
+          <h3 className="font-serif-accent text-2xl font-semibold text-[#051A24] md:text-3xl">
+            {name}
+          </h3>
+          <p className="mt-2 text-sm text-[#051A24]/70 md:text-base">
+            {description}
+          </p>
+        </div>
       </div>
 
-      {/* Horizontal, snapping rail — keeps a long screenshot set browsable
-          without turning the landing page into an endless scroll. */}
-      <div className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 hide-scrollbar">
+      {/* Full-bleed horizontal rail — text stays max-w-[1200px] above. */}
+      <div className="mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 hide-scrollbar">
         {images.map((src, i) => (
           <div
             key={src}
             className={
               variant === "phone"
                 ? "h-[400px] w-[200px] shrink-0 snap-start md:h-[520px] md:w-[260px]"
-                : "h-[220px] w-[85vw] shrink-0 snap-start md:h-[400px] md:w-[680px]"
+                : "h-[220px] w-[90vw] shrink-0 snap-start md:h-[420px] md:w-[800px]"
             }
           >
             <Media
               src={src}
               alt={`${name} ${i + 1}`}
-              className="h-full w-full rounded-2xl object-cover object-top shadow-lg"
+              className={
+                variant === "phone"
+                  ? "h-full w-full rounded-2xl object-cover object-top shadow-lg"
+                  : "h-full w-full rounded-2xl bg-[#f7f6f7] object-cover shadow-lg"
+              }
             />
           </div>
         ))}
@@ -99,7 +104,7 @@ function ProjectItem({
 
 export function ProjectsSection() {
   return (
-    <section className="mx-auto max-w-[1200px] px-6 py-12">
+    <section className="w-full py-12">
       <div className="flex flex-col gap-16 md:gap-20">
         {PROJECTS.map((project) => (
           <ProjectItem key={project.name} {...project} />

@@ -64,7 +64,8 @@ export function TestimonialCarousel() {
     };
 
     track.addEventListener("transitionend", handleTransitionEnd);
-    return () => track.removeEventListener("transitionend", handleTransitionEnd);
+    return () =>
+      track.removeEventListener("transitionend", handleTransitionEnd);
   }, [activeIndex]);
 
   useEffect(() => {
@@ -116,18 +117,16 @@ export function TestimonialCarousel() {
                 {testimonial.quote}
               </p>
               <div className="mt-6 flex items-center gap-3">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  loading="lazy"
-                  className="h-12 w-12 shrink-0 rounded-full object-cover ring-1 ring-[#051A24]/10"
+                <div
+                  aria-hidden
+                  className="h-12 w-12 shrink-0 animate-pulse rounded-full bg-[#f7f6f7]"
                 />
                 <div>
                   <p className="text-sm font-semibold text-[#051A24]">
                     {testimonial.name}
                   </p>
                   <p className="text-sm text-[#051A24]/70">
-                    → {testimonial.role}, {testimonial.company}
+                    {testimonial.role}, {testimonial.company}
                   </p>
                 </div>
               </div>
