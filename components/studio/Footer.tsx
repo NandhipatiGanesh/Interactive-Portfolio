@@ -11,6 +11,7 @@ const PAGE_LINKS = [
 const SOCIAL_LINKS = [
   { label: "LinkedIn", href: CONTACT.linkedin },
   { label: "GitHub", href: CONTACT.github },
+  { label: "WhatsApp", href: BOOK_URL },
   { label: "Email", href: `mailto:${CONTACT.email}` },
 ];
 
@@ -22,7 +23,13 @@ export function Footer() {
     <footer className="mx-auto w-full max-w-[1200px] px-6 py-12">
       <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
         <div className="flex flex-col gap-5">
-          <LinkButton href={BOOK_URL}>Start a chat</LinkButton>
+          <LinkButton
+            href={BOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Start a chat
+          </LinkButton>
           <div className="flex flex-col gap-1 text-sm text-[#051A24]/70">
             <a
               href={`mailto:${CONTACT.email}`}

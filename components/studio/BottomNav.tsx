@@ -7,7 +7,12 @@ export function BottomNav() {
       <span className="font-serif-accent text-2xl font-semibold text-[#051A24]">
         G
       </span>
-      <LinkButton href={BOOK_URL} className="!px-5 !py-2 text-sm">
+      <LinkButton
+        href={BOOK_URL}
+        className="!px-5 !py-2 text-sm"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Start a chat
       </LinkButton>
     </nav>

@@ -97,13 +97,15 @@ export function PartnerSection() {
         <LinkButton
           href={BOOK_URL}
           className="relative z-10 gap-3 !px-5"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <img
             src={CTA_AVATAR}
             alt="Ganesh"
             className="h-10 w-10 rounded-full object-cover"
           />
-          Start a chat with Ganesh
+          Start a chat with me
         </LinkButton>
       </div>
     </section>

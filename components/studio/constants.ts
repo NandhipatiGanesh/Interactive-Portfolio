@@ -78,13 +78,14 @@ export const PROJECTS = [
   {
     name: "Websites",
     description:
-      "Marketing sites, landing pages and full builds shipped with Next.js, WordPress and Elementor.",
+      "Marketing sites, landing pages and full builds shipped with Next.js, astro js, WordPress and Elementor.",
     images: WEBSITE_IMAGES,
     variant: "wide" as const,
   },
   {
     name: "Dashboards",
-    description: "Data-dense product interfaces, admin panels and chat tooling.",
+    description:
+      "Data-dense product interfaces, admin panels and chat tooling.",
     images: DASHBOARD_IMAGES,
     variant: "wide" as const,
   },
@@ -98,13 +99,16 @@ export const PROJECTS = [
 
 export const CONTACT = {
   email: "nandhipatiganeshkumar16@gmail.com",
-  phone: "+44 7344 760356",
-  phoneHref: "+447344760356",
+  phone: "+44 7735 913378",
+  phoneHref: "+447735913378",
   linkedin: "https://linkedin.com/in/ganesh-nandhipati",
   github: "https://github.com/NandhipatiGanesh",
   location: "United Kingdom",
 };
 
-export const BOOK_URL = "https://ganeshnandhipati.com/book";
+/** WhatsApp chat link derived from phoneHref (digits only). */
+export const WHATSAPP_URL = `https://wa.me/${CONTACT.phoneHref.replace(/\D/g, "")}`;
+
+export const BOOK_URL = WHATSAPP_URL;
 
 export const CTA_AVATAR = "/profileimage.png";

@@ -30,24 +30,21 @@ export function StudioLanding() {
 
   return (
     <div className="studio-landing min-h-screen bg-white pb-24">
-      <section
-        ref={ref}
-        className="mx-auto max-w-[540px] px-6 pt-12 md:pt-8"
-      >
+      <section ref={ref} className="mx-auto max-w-[540px] px-6 pt-12 md:pt-8">
         <p
-          className={` mb-4 text-[32px] font-semibold tracking-tight text-[#051A24] md:text-[40px] lg:text-[44px] ${anim("0.1s")}`}
+          className={`font-serif-accent mb-4 text-[32px] font-semibold tracking-tight text-[#051A24] md:text-[40px] lg:text-[44px] ${anim("0.1s")}`}
           style={{ animationDelay: "0.1s" }}
         >
-          Ganesh
+          Ganesh Kumar Nandhipati
         </p>
         <p
           className={`mb-2 font-mono text-xs text-[#051A24] md:text-sm ${anim("0.2s")}`}
           style={{ animationDelay: "0.2s" }}
         >
-          Ganesh Kumar Nandhipati — Frontend & React Native Developer.
+          UI/UX, Frontend & React Native Developer.
         </p>
         <h1
-          className={`text-[32px] leading-[1.1] tracking-tight whitespace-nowrap text-[#0D212C] md:text-[40px] lg:text-[44px] ${anim("0.3s")}`}
+          className={`mt-4 text-[32px] leading-[1.1] tracking-tight whitespace-nowrap text-[#0D212C] md:text-[40px] lg:text-[28px] ${anim("0.3s")}`}
           style={{ animationDelay: "0.3s" }}
         >
           Websites, <span className="font-serif-accent">apps</span> and
@@ -73,13 +70,19 @@ export function StudioLanding() {
             I am based in the UK, studying an MSc in Artificial Intelligence,
             and available for freelance projects or a full-time role.
           </p>
-          <p>Projects start at £1,000 per month.</p>
+          <p>Projects start at £500 per month.</p>
         </div>
         <div
           className={`mt-5 flex flex-col gap-3 sm:flex-row md:mt-6 md:gap-4 ${anim("0.5s")}`}
           style={{ animationDelay: "0.5s" }}
         >
-          <LinkButton href={BOOK_URL}>Start a chat</LinkButton>
+          <LinkButton
+            href={BOOK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Start a chat
+          </LinkButton>
           <LinkButton href="#work" variant="secondary">
             View projects
           </LinkButton>
@@ -94,7 +97,7 @@ export function StudioLanding() {
         <PricingSection />
       </div>
       <TestimonialCarousel />
-      <div id="work">
+      <div id="work" className="w-full">
         <ProjectsSection />
       </div>
       <PartnerSection />

@@ -26,12 +26,23 @@ export function PricingSection() {
             You work directly with me — no agency layers.
           </p>
           <div className="mt-6">
-            <p className="text-2xl text-[#F6FCFF]">£1,000</p>
+            <p className="text-2xl text-[#F6FCFF]">£500</p>
             <p className="text-sm text-[#E0EBF0]">Per month</p>
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <LinkButton href={BOOK_URL}>Start a chat</LinkButton>
-            <LinkButton href={BOOK_URL} variant="secondary">
+            <LinkButton
+              href={BOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start a chat
+            </LinkButton>
+            <LinkButton
+              href={BOOK_URL}
+              variant="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               How it works
             </LinkButton>
           </div>
@@ -46,15 +57,19 @@ export function PricingSection() {
           </h3>
           <p className="mt-2 text-sm leading-relaxed text-[#051A24]/70">
             Fixed scope, fixed timeline.
-            <br />
-            A website, dashboard or mobile app, built and shipped.
+            <br />A website, dashboard or mobile app, built and shipped.
           </p>
           <div className="mt-6">
             <p className="text-2xl text-[#0D212C]">£2,000</p>
             <p className="text-sm text-[#051A24]/70">Per project, from</p>
           </div>
           <div className="mt-6">
-            <LinkButton href={BOOK_URL} variant="tertiary">
+            <LinkButton
+              href={BOOK_URL}
+              variant="tertiary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Start a chat
             </LinkButton>
           </div>
