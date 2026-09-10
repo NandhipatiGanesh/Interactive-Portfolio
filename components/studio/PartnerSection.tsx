@@ -85,7 +85,7 @@ export function PartnerSection() {
   );
 
   return (
-    <section className="w-full px-6 py-12">
+    <section className="w-full px-6 py-6 md:py-12">
       <div
         ref={containerRef}
         onMouseMove={handleMouseMoveWithCleanup}

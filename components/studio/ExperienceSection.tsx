@@ -17,7 +17,7 @@ export function ExperienceSection() {
   const anim = () => (isInView ? "animate-fade-in-up" : "opacity-0");
 
   return (
-    <section ref={ref} className="mx-auto max-w-3xl px-6 py-12">
+    <section ref={ref} className="mx-auto max-w-3xl px-6 py-6 md:py-12">
       <h2
         className={`text-[32px] leading-[1.1] font-normal tracking-tight text-[#0D212C] md:text-[40px] lg:text-[44px] ${anim()}`}
         style={{ animationDelay: "0.1s" }}
