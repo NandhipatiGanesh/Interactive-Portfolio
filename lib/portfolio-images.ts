@@ -28,18 +28,18 @@ const MOBILE_APP_FILES = [
 
 export const MOBILE_IMAGES = [
   ...MOBILE_APP_FILES.map((f) => `/mobile-apps/${encodeURI(f)}`),
-  "/mobileviewimages/landingpraanavaidya.png",
-  "/mobileviewimages/luxhospitals.png",
-  "/mobileviewimages/gutcaremobileview.png",
-  "/mobileviewimages/advaithealthmobile.png",
-  "/mobileviewimages/chiragmobile.png",
-  "/mobileviewimages/cryptositemobileOne.png",
-  "/mobileviewimages/cryptositemobiletwo.png",
-  "/mobileviewimages/praanavaidyamobileview.png",
-  "/mobileviewimages/revviewsmobile.png",
-  "/mobileviewimages/webcomponents.png",
-  "/mobileviewimages/somediscussions.png",
-  "/mobileviewimages/footermobile.png",
+  // "/mobileviewimages/landingpraanavaidya.png",
+  // "/mobileviewimages/luxhospitals.png",
+  // "/mobileviewimages/gutcaremobileview.png",
+  // "/mobileviewimages/advaithealthmobile.png",
+  // "/mobileviewimages/chiragmobile.png",
+  // "/mobileviewimages/cryptositemobileOne.png",
+  // "/mobileviewimages/cryptositemobiletwo.png",
+  // "/mobileviewimages/praanavaidyamobileview.png",
+  // "/mobileviewimages/revviewsmobile.png",
+  // "/mobileviewimages/webcomponents.png",
+  // "/mobileviewimages/somediscussions.png",
+  // "/mobileviewimages/footermobile.png",
 ];
 
 const VIDEO_EXTENSIONS = [".mp4", ".webm", ".mov"];

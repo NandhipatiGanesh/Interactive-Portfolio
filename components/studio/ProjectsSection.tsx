@@ -64,7 +64,7 @@ function ProjectItem({
 
   return (
     <div ref={ref} className={isInView ? "animate-fade-in-up" : "opacity-0"}>
-      <div className="ml-20 md:ml-28">
+      <div className="ml-0 md:ml-28">
         <h3 className="font-serif-accent text-2xl font-semibold text-[#051A24] md:text-3xl">
           {name}
         </h3>
@@ -79,16 +79,18 @@ function ProjectItem({
         {images.map((src, i) => (
           <div
             key={src}
-            className={
+            /* Height only — width follows the image's own aspect ratio, so
+               every shot shows whole at its natural proportions. */
+            className={`shrink-0 snap-start ${
               variant === "phone"
-                ? "h-[400px] w-[200px] shrink-0 snap-start md:h-[520px] md:w-[260px]"
-                : "h-[220px] w-[85vw] shrink-0 snap-start md:h-[400px] md:w-[680px]"
-            }
+                ? "h-[400px] md:h-[520px]"
+                : "h-[220px] md:h-[400px]"
+            }`}
           >
             <Media
               src={src}
               alt={`${name} ${i + 1}`}
-              className="h-full w-full rounded-2xl object-cover object-top shadow-lg"
+              className="h-full w-auto rounded-2xl shadow-lg"
             />
           </div>
         ))}

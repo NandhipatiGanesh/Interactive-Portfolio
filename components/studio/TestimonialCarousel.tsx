@@ -76,7 +76,7 @@ export function TestimonialCarousel() {
 
   return (
     <section
-      className="w-full py-20"
+      className="w-full py-10 md:py-20"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
